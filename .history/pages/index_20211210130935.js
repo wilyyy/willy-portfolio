@@ -8,9 +8,6 @@ const Test = styled.div`
   height: 100vh;
   background-color: #000;
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 export default function Home() {
