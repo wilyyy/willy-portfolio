@@ -1,27 +1,27 @@
-import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
+import Typewriter from 'typewriter-effect';
+import TypewritterText from '../comps/TypewritterText';
 
-const Test = styled.div`
+const Page = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #000;
   color: #fff;
+  font-size: 60px;
+  text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-export default function Home() {
-  const [changeText, setChangeText] = useState(false);
-  const generateText = () => {
-    setChangeText(!changeText);
-  }
+const Home = () => {
   return (
-    <>
-    asdsad
-    </>
+    <Page>
+      <TypewritterText text='npm install william portfolio' textsize='16px'/>
+    </Page>
   )
 }
+
+export default Home;
