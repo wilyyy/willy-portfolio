@@ -7,6 +7,4 @@ export const global_theme = {
     }
 };
 
-// const light = {
-//     white: '#fff'
-// };
+//change colors l8er

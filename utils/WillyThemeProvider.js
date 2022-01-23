@@ -1,5 +1,5 @@
 import {useContext, createContext, useState} from 'react';
-import { global_theme } from './themeconfig';
+import { global_theme } from './ThemeConfig';
 
 const initialStates = {
     theme: "dark",
