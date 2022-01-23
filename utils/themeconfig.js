@@ -1,3 +1,7 @@
-const dark = [];
+const dark = {
+    black: '#000'
+};
 
-const light = [];
+const light = {
+    white: '#fff'
+};

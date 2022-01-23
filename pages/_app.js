@@ -1,9 +1,10 @@
 import '../styles/globals.css';
 import Head from 'next/head';
+import WillyThemeProvider from '../utils/WillyThemeProvider';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <WillyThemeProvider>
       <Head>
         <title>William Laurel Alvarez - Full Stack Developer</title>
         <meta charset="utf-8" />
@@ -19,7 +20,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Component {...pageProps} />
-    </>
+    </WillyThemeProvider>
   )
 }
 

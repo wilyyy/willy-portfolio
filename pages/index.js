@@ -18,7 +18,7 @@ const Page = styled.div`
 const Home = () => {
   return (
     <Page>
-      <TypewritterText text='npm install william portfolio' textsize='16px'/>
+      <TypewritterText text='william laurel alvarez' textsize='16px'/>
     </Page>
   )
 }
