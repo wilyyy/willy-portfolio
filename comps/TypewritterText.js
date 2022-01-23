@@ -11,7 +11,6 @@ const TypewritterText = ({
     textsize="60px",
     isLoop = false
 }) => {
-
     return (
         <Container textsize={textsize}>
             <Typewriter

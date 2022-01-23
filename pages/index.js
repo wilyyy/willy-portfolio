@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useState, useEffect } from "react";
 import TypewritterText from '../comps/TypewritterText';
 
-const Page = styled.div`
+const LoadingPage = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #000;
@@ -16,10 +16,25 @@ const Page = styled.div`
 `;
 
 const Home = () => {
+  const [loading, setLoading] = useState(false);
+
+  useEffect(()=>{
+    const LoadPage = () => {
+      setLoading(true);
+    }
+    setTimeout(LoadPage, 5000);
+  }, [])
+
   return (
-    <Page>
-      <TypewritterText text='william laurel alvarez' textsize='16px'/>
-    </Page>
+    <>
+      {loading === false ? (
+        <LoadingPage>
+          <TypewritterText text='william laurel alvarez' textsize='16px'/>
+        </LoadingPage>
+      ) : (
+        <div>asdasd</div>
+      )}
+    </>
   )
 }
 
