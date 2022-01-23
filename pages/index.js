@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
-import Typewriter from 'typewriter-effect';
 import TypewritterText from '../comps/TypewritterText';
 
 const Page = styled.div`
