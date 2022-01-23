@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 450.93 366.17" style="enable-background:new 0 0 450.93 366.17;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);stroke:url(#SVGID_2_);stroke-width:3.8954;stroke-miterlimit:10;}
+	.st1{fill:url(#SVGID_3_);stroke:url(#SVGID_4_);stroke-width:3.8954;stroke-miterlimit:10;}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="335.9177" y1="114.1475" x2="-12.527" y2="286.1078">
+	<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0.1"/>
+	<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0.4"/>
+</linearGradient>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="0" y1="183.084" x2="392.462" y2="183.084">
+	<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0.4"/>
+	<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+</linearGradient>
+<path class="st0" d="M368.24,56H173.39c-8.58-2.81-14.26-8.84-18.79-17.29V24.22c0-12.3-9.97-22.28-22.28-22.28H24.22
+	c-12.3,0-22.28,9.97-22.28,22.28v54.05v75.23v188.44c0,12.3,9.97,22.28,22.28,22.28h344.01c12.3,0,22.28-9.97,22.28-22.28v-222.3
+	V78.27C390.51,65.97,380.54,56,368.24,56z"/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="221.1418" y1="425.5963" x2="233.7025" y2="-19.5331">
+	<stop  offset="0.1055" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	<stop  offset="0.6159" style="stop-color:#FFFFFF;stop-opacity:0.8"/>
+</linearGradient>
+<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="1.7322" y1="241.6207" x2="450.9342" y2="241.6207">
+	<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0.4"/>
+</linearGradient>
+<path class="st1" d="M91.33,119.65H426.7c16.03,0,25.55,13,21.25,29.03l-49.81,185.88c-4.3,16.03-20.78,29.03-36.81,29.03H25.97
+	c-16.03,0-25.55-13-21.25-29.03l49.81-185.88C58.82,132.64,75.3,119.65,91.33,119.65z"/>
+</svg>

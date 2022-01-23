@@ -1,7 +1,12 @@
-const dark = {
-    black: '#000'
+export const global_theme = {
+    dark: {
+        base: '#000'
+    },
+    light: {
+        base: '#fff'
+    }
 };
 
-const light = {
-    white: '#fff'
-};
+// const light = {
+//     white: '#fff'
+// };

@@ -2,7 +2,7 @@ import {useContext, createContext, useState} from 'react';
 //import global color values from themeconfig here when set up
 
 const initialStates = {
-    theme: "default",
+    theme: "light",
     setTheme: ()=>{}
 }
 
@@ -13,7 +13,7 @@ const WillyThemeProvider = ({children}) => {
     const [theme, setTheme] = useState(initialStates.theme);
 
     return (
-        <MyContext.Provider>
+        <MyContext.Provider value={{theme, setTheme}}>
             {children}
         </MyContext.Provider>
     )
