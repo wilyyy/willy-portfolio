@@ -1,8 +1,8 @@
 import {useContext, createContext, useState} from 'react';
-//import global color values from themeconfig here when set up
+import { global_theme } from './themeconfig';
 
 const initialStates = {
-    theme: "light",
+    theme: "dark",
     setTheme: ()=>{}
 }
 
@@ -14,6 +14,13 @@ const WillyThemeProvider = ({children}) => {
 
     return (
         <MyContext.Provider value={{theme, setTheme}}>
+            <style jsx global>
+                {`
+                    body {
+                        background-color:${global_theme[theme].base};
+                    }
+                `}
+            </style>
             {children}
         </MyContext.Provider>
     )
