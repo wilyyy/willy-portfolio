@@ -8,8 +8,9 @@ const Container = styled.div`
 
 const TypewritterText = ({
     text="William Laurel Alvarez",
-    textsize="60px",
-    isLoop = false
+    textsize="16px",
+    isLoop = false,
+    delay
 }) => {
     return (
         <Container textsize={textsize}>
@@ -18,6 +19,7 @@ const TypewritterText = ({
                     strings: text,
                     autoStart: true,
                     loop: isLoop,
+                    delay: delay
                 }}
             />
         </Container>

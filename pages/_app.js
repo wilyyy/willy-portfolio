@@ -1,5 +1,7 @@
 import '../styles/globals.css';
 import Head from 'next/head';
+import Link from "next/link";
+
 import WillyThemeProvider from '../utils/WillyThemeProvider';
 
 function MyApp({ Component, pageProps }) {
@@ -17,6 +19,12 @@ function MyApp({ Component, pageProps }) {
           name="description" 
           content="The practice of William Laurel Alvarez, a full stack mobile and web developer and 
           a graduate of the Digital Design and Development program at BCIT" 
+        />
+        <link
+            rel="preload"
+            href="../public/fonts/consolas.ttf"
+            as="font"
+            crossOrigin=""
         />
       </Head>
       <Component {...pageProps} />

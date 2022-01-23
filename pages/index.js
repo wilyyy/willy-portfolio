@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
-import TypewritterText from '../comps/TypewritterText';
 
-const LoadingPage = styled.div`
+import TypewritterText from '../comps/TypewritterText';
+import Preloader from '../comps/Preloader';
+
+const Page = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #000;
@@ -18,23 +20,21 @@ const LoadingPage = styled.div`
 const Home = () => {
   const [loading, setLoading] = useState(false);
 
-  useEffect(()=>{
-    const LoadPage = () => {
-      setLoading(true);
-    }
-    setTimeout(LoadPage, 5000);
-  }, [])
+  // useEffect(()=>{
+  //   const LoadPage = () => {
+  //     setLoading(true);
+  //   }
+  //   setTimeout(LoadPage, 5000);
+  // }, [])
 
   return (
-    <>
+    <Page>
       {loading === false ? (
-        <LoadingPage>
-          <TypewritterText text='william laurel alvarez' textsize='16px'/>
-        </LoadingPage>
+        <Preloader />
       ) : (
         <div>asdasd</div>
       )}
-    </>
+    </Page>
   )
 }
 
