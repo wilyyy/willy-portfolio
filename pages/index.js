@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useState, useEffect } from "react";
 
 import { useTheme } from '../utils/WillyThemeProvider';
-import { global_theme } from '../utils/ThemeConfig';
+import { global_theme } from '../utils/themeconfig';
 import Preloader from '../comps/Preloader';
 import Icon from '../comps/Icon';
 
