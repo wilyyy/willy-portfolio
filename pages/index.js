@@ -1,10 +1,8 @@
-import Image from 'next/image'
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
 
 import { useTheme } from '../utils/WillyThemeProvider';
 import { global_theme } from '../utils/ThemeConfig';
-import TypewritterText from '../comps/TypewritterText';
 import Preloader from '../comps/Preloader';
 import Icon from '../comps/Icon';
 
@@ -21,7 +19,6 @@ const Page = styled.div`
 
 const Home = () => {
   const [loading, setLoading] = useState(false); //set 2 false later
-  const {theme, setTheme} = useTheme();
 
   useEffect(()=>{
     const LoadPage = () => {
