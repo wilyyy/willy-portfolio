@@ -18,6 +18,7 @@ const Preloader = () => {
     return (
         <Container>
             <TypewritterText text="npm start willy-portfolio" delay={40} />
+            <TypewritterText text="work in progress" delay={40} />
         </Container>
     )
 }
