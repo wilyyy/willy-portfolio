@@ -29,6 +29,7 @@ const Column = styled.div`
 const Row = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: ${props=>props.width};
   height: ${props=>props.height};
 `;
@@ -41,7 +42,7 @@ const Home = () => {
     const LoadPage = () => {
       setLoading(true);
     }
-    setTimeout(LoadPage, 5000);
+    setTimeout(LoadPage, 2000);
   }, [])
 
   return (
@@ -58,11 +59,10 @@ const Home = () => {
             <h1>William Laurel Alvarez</h1>
             <h3>Web / Mobile Developer</h3>
           </Column>
-          <Row width="80%" height="auto">
-            <Icon folder />
-            <Icon folder />
-            <Icon folder />
-            <Icon folder />
+          <Row width="auto" height="auto">
+            <Icon folder onButtonClick={()=> alert("clicked")}/>
+            <Icon notepad />
+            <Icon mail />
           </Row>
         </Page>
       )}

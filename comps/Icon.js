@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { useTheme } from "../utils/WillyThemeProvider";
 import folderIconGlass from '../public/folderIconGlass.svg';
 import folderIconOutline from '../public/folderIconOutline.svg';
+import notepadIconGlass from '../public/notepadIconGlass.svg';
+import notepadIconOutline from '../public/notepadIconOutline.svg';
 import { global_theme } from "../utils/themeconfig";
 
 const Container = styled.div`
@@ -13,20 +15,22 @@ const Container = styled.div`
     align-items: center;
     color: ${global_theme.text};
     font-family: "cartograph";
-    width: 146px;
+    width: auto;
     height: 118px;
 `;
 
 const Icon = ({
     folder,
-    notepad
+    notepad,
+    mail,
+    onButtonClick=()=>{}
 }) => {
     const {theme} = useTheme();
 
     return (
         <>
             {folder && 
-                <Container>
+                <Container onClick={onButtonClick}>
                     <Image
                         src={theme === 'dark' ? folderIconGlass : folderIconOutline}
                         width='146'
@@ -37,7 +41,18 @@ const Icon = ({
             }
 
             {notepad &&
-                <p>Notepad</p>
+                <Container onClick={onButtonClick}>
+                <Image
+                    src={theme === 'dark' ? notepadIconGlass : notepadIconOutline}
+                    width='150'
+                    height='173'
+                />
+                <p>About</p>
+                </Container>
+            }
+
+            {mail &&
+                <p>Contact</p>
             }
         </>
     )
