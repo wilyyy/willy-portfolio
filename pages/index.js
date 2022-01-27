@@ -10,14 +10,31 @@ const Page = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: ${global_theme.base};
-  color: #fff;
-  font-size: 60px;
+  color: ${global_theme.text};
+  font-family: "cartograph";
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 `;
 
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: ${props=>props.width};
+  height: ${props=>props.height};
+`;
+
+const Row = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: ${props=>props.width};
+  height: ${props=>props.height};
+`;
+
 const Home = () => {
+  const {theme, setTheme} = useTheme();
   const [loading, setLoading] = useState(false); //set 2 false later
 
   useEffect(()=>{
@@ -28,13 +45,28 @@ const Home = () => {
   }, [])
 
   return (
-    <Page>
+    <>      
       {loading === false ? (
         <Preloader />
       ) : (
-        <Icon folder />
+        <Page>
+          <button 
+            onClick={()=>{setTheme(theme === 'dark' ? 'light' : 'dark')}}
+            style={{position: "absolute", right: '2%', top:'2%', width: '100px', height: '50px'}}
+          >test</button>
+          <Column width='650px' height='126px'>
+            <h1>William Laurel Alvarez</h1>
+            <h3>Web / Mobile Developer</h3>
+          </Column>
+          <Row width="80%" height="auto">
+            <Icon folder />
+            <Icon folder />
+            <Icon folder />
+            <Icon folder />
+          </Row>
+        </Page>
       )}
-    </Page>
+    </>
   )
 }
 

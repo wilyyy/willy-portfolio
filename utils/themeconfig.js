@@ -1,9 +1,11 @@
 export const global_theme = {
     dark: {
-        base: '#0A0B0D'
+        base: '#0A0B0D',
+        text: '#fff' //temporary
     },
     light: {
-        base: '#FAF4D3'
+        base: '#FAF4D3',
+        text: '#000' //temporary
     }
 };
 
