@@ -18,6 +18,7 @@ const WillyThemeProvider = ({children}) => {
                 {`
                     body {
                         background-color:${global_theme[theme].base};
+                        transition: all 0.5s linear;
                     }
                 `}
             </style>

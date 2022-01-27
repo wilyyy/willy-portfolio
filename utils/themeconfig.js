@@ -1,9 +1,9 @@
 export const global_theme = {
     dark: {
-        base: '#000'
+        base: '#0A0B0D'
     },
     light: {
-        base: '#fff'
+        base: '#FAF4D3'
     }
 };
 

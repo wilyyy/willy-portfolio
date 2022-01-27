@@ -16,10 +16,12 @@ const Icon = ({
             <button onClick={()=>{
                 setTheme(theme === 'dark' ? 'light' : 'dark')
             }}>test</button>
-            
+
             {folder && 
                 <Image
                     src={theme === 'dark' ? folderIconGlass : folderIconOutline}
+                    width='146'
+                    height='118'
                 />
             }
 
