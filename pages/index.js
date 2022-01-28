@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
+import { motion } from 'framer-motion';
 
 import { useTheme } from '../utils/WillyThemeProvider';
 import { global_theme } from '../utils/themeconfig';
 import Preloader from '../comps/Preloader';
 import Icon from '../comps/Icon';
 
-const Page = styled.div`
+const Page = styled(motion.div)`
   width: 100vw;
   height: 100vh;
   background-color: ${global_theme.base};
@@ -42,7 +43,7 @@ const Home = () => {
     const LoadPage = () => {
       setLoading(true);
     }
-    setTimeout(LoadPage, 4000);
+    setTimeout(LoadPage, 3000);
   }, [])
 
   return (
@@ -50,7 +51,18 @@ const Home = () => {
       {loading === false ? (
         <Preloader />
       ) : (
-        <Page>
+        <Page
+          initial="pageInitial" 
+          animate="pageAnimate" 
+          variants={{
+              pageInitial: {
+                  opacity: 0
+              },
+              pageAnimate: {
+                  opacity: 1
+              },
+          }}
+        >
           <button 
             onClick={()=>{setTheme(theme === 'dark' ? 'light' : 'dark')}}
             style={{position: "absolute", right: '2%', top:'2%', width: '100px', height: '50px'}}
