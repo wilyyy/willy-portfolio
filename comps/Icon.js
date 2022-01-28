@@ -27,6 +27,8 @@ const Icon = ({
 }) => {
     const {theme} = useTheme();
 
+    //change stroke back to 6
+
     return (
         <>
             {folder && 

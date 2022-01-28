@@ -42,7 +42,7 @@ const Home = () => {
     const LoadPage = () => {
       setLoading(true);
     }
-    setTimeout(LoadPage, 2000);
+    setTimeout(LoadPage, 4000);
   }, [])
 
   return (
