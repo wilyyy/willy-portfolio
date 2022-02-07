@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { useTheme } from '../utils/WillyThemeProvider';
 import { global_theme } from '../utils/themeconfig';
 import Preloader from '../comps/Preloader';
 import Icon from '../comps/Icon';
+import ProjectsModal from '../comps/ProjectsModal';
 
 const Page = styled(motion.div)`
   width: 100vw;
@@ -33,11 +34,18 @@ const Row = styled.div`
   align-items: center;
   width: ${props=>props.width};
   height: ${props=>props.height};
+  z-index: 1;
 `;
 
-const Home = () => {
+const Temp = styled.div`
+  position: absolute;
+  z-index: 200;
+`;
+
+const Home = ({isVisible}) => {
   const {theme, setTheme} = useTheme();
   const [loading, setLoading] = useState(false); //set 2 false later
+  const [modal, setModal] = useState("none");
 
   useEffect(()=>{
     const LoadPage = () => {
@@ -49,7 +57,15 @@ const Home = () => {
   return (
     <>      
       {loading === false ? (
-        <Preloader />
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <Preloader />
+          </motion.div>
+        </AnimatePresence>
       ) : (
         <Page
           initial="pageInitial" 
@@ -71,11 +87,15 @@ const Home = () => {
             <h1>William Laurel Alvarez</h1>
             <h3>Web / Mobile Developer</h3>
           </Column>
+          <Temp>
+            <ProjectsModal />
+          </Temp>
           <Row width="auto" height="auto">
             <Icon folder onButtonClick={()=> alert("clicked")}/>
             <Icon notepad />
             <Icon mail />
           </Row>
+          
         </Page>
       )}
     </>
