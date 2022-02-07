@@ -11,13 +11,16 @@ import ProjectsModal from '../comps/ProjectsModal';
 const Page = styled(motion.div)`
   width: 100vw;
   height: 100vh;
-  background-color: ${global_theme.base};
-  color: ${global_theme.text};
-  font-family: "cartograph";
+  font-family: "cartograph_extralight";
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+`;
+
+const Text = styled.p`
+  font-size: ${props=>props.fontsize};
+  text-shadow: 0px 0px 10px rgba(51, 69, 185, 0.75);
 `;
 
 const Column = styled.div`
@@ -42,16 +45,13 @@ const Temp = styled.div`
   z-index: 200;
 `;
 
-const Home = ({isVisible}) => {
+const Home = () => {
   const {theme, setTheme} = useTheme();
   const [loading, setLoading] = useState(false); //set 2 false later
-  const [modal, setModal] = useState("none");
+  const [modal, setModal] = useState("none"); //3 modes based on string
 
   useEffect(()=>{
-    const LoadPage = () => {
-      setLoading(true);
-    }
-    setTimeout(LoadPage, 3000);
+    setTimeout(() => setLoading(true), 3000);
   }, [])
 
   return (
@@ -84,14 +84,14 @@ const Home = ({isVisible}) => {
             style={{position: "absolute", right: '2%', top:'2%', width: '100px', height: '50px'}}
           >test</button>
           <Column width='650px' height='126px'>
-            <h1>William Laurel Alvarez</h1>
-            <h3>Web / Mobile Developer</h3>
+            <Text fontsize="36px">William Laurel Alvarez</Text>
+            <Text fontsize="24px">Web / Mobile Developer</Text>
           </Column>
-          <Temp>
+          {/* <Temp>
             <ProjectsModal />
-          </Temp>
+          </Temp> */}
           <Row width="auto" height="auto">
-            <Icon folder onButtonClick={()=> alert("clicked")}/>
+            <Icon folder onButtonClick={() => alert("clicked")}/>
             <Icon notepad />
             <Icon mail />
           </Row>

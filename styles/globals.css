@@ -22,6 +22,13 @@ a {
   font-weight: 400;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "cartograph_extralight";
+  src: url("../public/fonts/cartograph_extralight.ttf");
+  font-display: swap;
+}
+
 @font-face {
   font-family: "consolas";
   src: url("../public/fonts/consolas.ttf");

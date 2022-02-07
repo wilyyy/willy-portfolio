@@ -32,6 +32,12 @@ function MyApp({ Component, pageProps }) {
             as="font"
             crossOrigin=""
         />
+        <link
+            rel="preload"
+            href="../public/fonts/cartograph_extralight.ttf"
+            as="font"
+            crossOrigin=""
+        />
       </Head>
       <Component {...pageProps} />
     </WillyThemeProvider>
