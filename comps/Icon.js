@@ -22,6 +22,7 @@ const Container = styled.div`
 const Icon = ({
     folder,
     notepad,
+    gear,
     mail,
     onButtonClick=()=>{}
 }) => {
@@ -53,8 +54,26 @@ const Icon = ({
                 </Container>
             }
 
+            {gear &&
+                <Container onClick={onButtonClick}>
+                <Image
+                    src={theme === 'dark' ? notepadIconGlass : notepadIconOutline}
+                    width='150'
+                    height='173'
+                />
+                <p>Tools</p>
+                </Container>
+            }
+
             {mail &&
-                <p onClick={onButtonClick}>Contact</p>
+                <Container onClick={onButtonClick}>
+                <Image
+                    src={theme === 'dark' ? notepadIconGlass : notepadIconOutline}
+                    width='150'
+                    height='173'
+                />
+                <p>Contact</p>
+                </Container>
             }
         </>
     )
