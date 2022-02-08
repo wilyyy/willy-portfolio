@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { useTheme } from '../utils/WillyThemeProvider';
 import { global_theme } from '../utils/themeconfig';
+import bgimage from "../public/darkbg.png";
 import Preloader from '../comps/Preloader';
 import Icon from '../comps/Icon';
 import ProjectsModal from '../comps/ProjectsModal';
@@ -90,14 +91,22 @@ const Home = () => {
             <Text fontsize="24px">Web / Mobile Developer</Text>
           </Column>
 
+          {modal === "projects" &&
+            <div>asdsad</div>
+          }
+
           {modal === "contact" &&
             <Temp>
-              <ContactModal onCloseClick={() => setModal("none")}/>
+              <ContactModal 
+                onSubmitClick={() => setModal("none")}
+                onCloseClick={() => setModal("none")}
+              />
             </Temp>
           }
           <Row width="auto" height="auto">
-            <Icon folder onButtonClick={() => alert("clicked")}/>
-            <Icon notepad />
+            <Icon folder onButtonClick={() => setModal("projects")}/>
+            <Icon notepad onButtonClick={() => setModal("about")}/>
+            <Icon gear onButtonClick={() => setModal("tools")}/>
             <Icon mail onButtonClick={() => setModal("contact")}/>
           </Row>
           
