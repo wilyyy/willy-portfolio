@@ -7,6 +7,7 @@ import { global_theme } from '../utils/themeconfig';
 import Preloader from '../comps/Preloader';
 import Icon from '../comps/Icon';
 import ProjectsModal from '../comps/ProjectsModal';
+import ContactModal from '../comps/ContactModal';
 
 const Page = styled(motion.div)`
   width: 100vw;
@@ -16,6 +17,7 @@ const Page = styled(motion.div)`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  cursor: crosshair;
 `;
 
 const Text = styled.p`
@@ -87,13 +89,16 @@ const Home = () => {
             <Text fontsize="36px">William Laurel Alvarez</Text>
             <Text fontsize="24px">Web / Mobile Developer</Text>
           </Column>
-          {/* <Temp>
-            <ProjectsModal />
-          </Temp> */}
+
+          {modal === "contact" &&
+            <Temp>
+              <ContactModal onCloseClick={() => setModal("none")}/>
+            </Temp>
+          }
           <Row width="auto" height="auto">
             <Icon folder onButtonClick={() => alert("clicked")}/>
             <Icon notepad />
-            <Icon mail />
+            <Icon mail onButtonClick={() => setModal("contact")}/>
           </Row>
           
         </Page>
