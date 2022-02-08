@@ -54,7 +54,7 @@ const Icon = ({
             }
 
             {mail &&
-                <p>Contact</p>
+                <p onClick={onButtonClick}>Contact</p>
             }
         </>
     )
