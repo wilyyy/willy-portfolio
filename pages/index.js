@@ -9,6 +9,7 @@ import Preloader from '../comps/Preloader';
 import Icon from '../comps/Icon';
 import ProjectsModal from '../comps/ProjectsModal';
 import ContactModal from '../comps/ContactModal';
+import ToolsModal from '../comps/ToolsModal';
 
 const Page = styled(motion.div)`
   width: 100vw;
@@ -93,6 +94,14 @@ const Home = () => {
 
           {modal === "projects" &&
             <div>asdsad</div>
+          }
+
+          {modal === "tools" &&
+            <Temp>
+              <ToolsModal
+                onCloseClick={() => setModal("none")}
+              />
+            </Temp>
           }
 
           {modal === "contact" &&
