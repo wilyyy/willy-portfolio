@@ -17,8 +17,7 @@ function MyApp({ Component, pageProps }) {
         />
         <meta 
           name="description" 
-          content="The practice of William Laurel Alvarez, a web and mobile react developer and 
-          a graduate of the Digital Design and Development program at BCIT" 
+          content="The craft of William Laurel Alvarez, a web and mobile react developer & designer based in Vancouver, Canada" 
         />
         <link
             rel="preload"
