@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { useTheme } from "../utils/WillyThemeProvider";
 import folderIconGlass from '../public/folderIconGlass.svg';
@@ -8,12 +9,11 @@ import notepadIconGlass from '../public/notepadIconGlass.svg';
 import notepadIconOutline from '../public/notepadIconOutline.svg';
 import { global_theme } from "../utils/themeconfig";
 
-const Container = styled.div`
+const Container = styled(motion.div)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    color: ${global_theme.text};
     font-family: "cartograph";
     width: auto;
     height: 118px;
@@ -33,7 +33,11 @@ const Icon = ({
     return (
         <>
             {folder && 
-                <Container onClick={onButtonClick}>
+                <Container 
+                    whileHover={{scale: 1.5}}
+                    whileTap={{scale: 0.8}}
+                    onClick={onButtonClick}
+                >
                     <Image
                         src={theme === 'dark' ? folderIconGlass : folderIconOutline}
                         width='146'
@@ -44,7 +48,11 @@ const Icon = ({
             }
 
             {notepad &&
-                <Container onClick={onButtonClick}>
+                <Container 
+                    whileHover={{scale: 1.5}}
+                    whileTap={{scale: 0.8}}
+                    onClick={onButtonClick}
+                >
                 <Image
                     src={theme === 'dark' ? notepadIconGlass : notepadIconOutline}
                     width='150'
@@ -55,7 +63,11 @@ const Icon = ({
             }
 
             {gear &&
-                <Container onClick={onButtonClick}>
+                <Container 
+                    whileHover={{scale: 1.5}}
+                    whileTap={{scale: 0.8}}
+                    onClick={onButtonClick}
+                >
                 <Image
                     src={theme === 'dark' ? notepadIconGlass : notepadIconOutline}
                     width='150'
@@ -66,7 +78,11 @@ const Icon = ({
             }
 
             {mail &&
-                <Container onClick={onButtonClick}>
+                <Container 
+                    whileHover={{scale: 1.5}}
+                    whileTap={{scale: 0.8}}
+                    onClick={onButtonClick}
+                >
                 <Image
                     src={theme === 'dark' ? notepadIconGlass : notepadIconOutline}
                     width='150'

@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { CloseOutline } from "styled-icons/evaicons-outline";
+import { motion } from "framer-motion";
 
 import { global_theme } from "../utils/themeconfig";
 import { useTheme } from "../utils/WillyThemeProvider";
+import { dropIn } from "../utils/ModalSettings";
 
-const Stroke = styled.div`
+const Stroke = styled(motion.div)`
     width: 70vw;
     height: 652px;
     display: flex;
@@ -138,7 +140,12 @@ const ContactModal = ({
     const { theme } = useTheme();
 
     return (
-        <Stroke>
+        <Stroke 
+            variants={dropIn}
+            initial="hidden"
+            animate="visible"
+            exit="exit"  
+        >
             <Container>
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
                 <H1>Hit me up!</H1>
