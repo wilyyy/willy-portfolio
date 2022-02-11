@@ -7,6 +7,7 @@ import { global_theme } from '../utils/themeconfig';
 import bgimage from "../public/darkbg.png";
 import Preloader from '../comps/Preloader';
 import Icon from '../comps/Icon';
+import TopInfo from '../comps/TopInfo';
 import ProjectsModal from '../comps/ProjectsModal';
 import ContactModal from '../comps/ContactModal';
 import ToolsModal from '../comps/ToolsModal';
@@ -22,10 +23,10 @@ const Page = styled(motion.div)`
   cursor: crosshair;
 `;
 
-const Text = styled.p`
-  font-size: ${props=>props.fontsize};
-  text-shadow: 0px 0px 10px rgba(51, 69, 185, 0.75);
-`;
+// const Text = styled.p`
+//   font-size: ${props=>props.fontsize};
+//   text-shadow: 0px 0px 10px rgba(51, 69, 185, 0.75);
+// `;
 
 const Column = styled.div`
   display: flex;
@@ -47,6 +48,11 @@ const Row = styled.div`
 const Temp = styled.div`
   position: absolute;
   z-index: 200;
+`;
+
+const TopCont = styled.div`
+  position: absolute;
+  top: 1%;
 `;
 
 const Home = () => {
@@ -83,15 +89,14 @@ const Home = () => {
               },
           }}
         >
-          <button 
+          {/* <button 
             onClick={()=>{setTheme(theme === 'dark' ? 'light' : 'dark')}}
             style={{position: "absolute", right: '2%', top:'2%', width: '100px', height: '50px'}}
-          >test</button>
-          <Column width='650px' height='126px'>
-            <Text fontsize="36px">William Laurel Alvarez</Text>
-            <Text fontsize="24px">Web / Mobile Developer</Text>
-          </Column>
+          >test</button> */}
+          <TopCont>
 
+            <TopInfo />
+          </TopCont>
           {modal === "projects" &&
             <div>asdsad</div>
           }

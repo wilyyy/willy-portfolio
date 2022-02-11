@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
 import { CloseOutline } from "styled-icons/evaicons-outline";
 import { LogoReact } from "@styled-icons/ionicons-solid/LogoReact";
 import { Javascript } from "@styled-icons/fluentui-system-filled/Javascript";
@@ -16,11 +18,12 @@ import { Adobeillustrator } from "@styled-icons/simple-icons/Adobeillustrator";
 import { DigitalOcean } from "@styled-icons/fa-brands/DigitalOcean";
 import { Autodesk } from "@styled-icons/simple-icons/Autodesk";
 import { Adobeaftereffects } from "@styled-icons/simple-icons/Adobeaftereffects";
-
+import { Mongodb } from "@styled-icons/simple-icons/Mongodb";
 import { global_theme } from "../utils/themeconfig";
 import { useTheme } from "../utils/WillyThemeProvider";
+import { dropIn } from "../utils/ModalSettings";
 
-const Stroke = styled.div`
+const Stroke = styled(motion.div)`
     width: 70vw;
     height: 652px;
     display: flex;
@@ -217,11 +220,22 @@ const AEIcon = styled(Adobeaftereffects)`
     height: 70px;
 `;
 
+const MongoIcon = styled(Mongodb)`
+    color: ${props=>props.color};
+    width: 70px;
+    height: 70px;
+`;
+
 const ToolsModal = ({onCloseClick=()=>{}}) => {
     const { theme } = useTheme();
 
     return (
-        <Stroke>
+        <Stroke
+            variants={dropIn}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+        >
             <Container>
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
                 <H1>My Toolbox</H1>
@@ -260,7 +274,7 @@ const ToolsModal = ({onCloseClick=()=>{}}) => {
                         <p>Express.js</p>
                     </IconCont>
                     <IconCont>
-                        <ReactIcon color={global_theme[theme].text}/>
+                        <MongoIcon color={global_theme[theme].text}/>
                         <p>MongoDB</p>
                     </IconCont>
                     <IconCont>
