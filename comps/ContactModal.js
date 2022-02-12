@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { CloseOutline } from "styled-icons/evaicons-outline";
 import { motion } from "framer-motion";
 
+import { CloseOutline } from "styled-icons/evaicons-outline";
 import { global_theme } from "../utils/themeconfig";
 import { useTheme } from "../utils/WillyThemeProvider";
 import { dropIn } from "../utils/ModalSettings";
@@ -133,10 +133,7 @@ const Close = styled(CloseOutline)`
     color: ${props=>props.color};
 `;
 
-const ContactModal = ({
-    onSubmitClick=()=>{},
-    onCloseClick=()=>{}
-}) => {
+const ContactModal = ({onSubmitClick, onCloseClick}) => {
     const { theme } = useTheme();
 
     return (
