@@ -34,7 +34,7 @@ const Icon = ({
         <>
             {folder && 
                 <Container 
-                    whileHover={{scale: 1.5}}
+                    whileHover={{scale: 1.3}}
                     whileTap={{scale: 0.8}}
                     onClick={onButtonClick}
                 >
@@ -49,7 +49,7 @@ const Icon = ({
 
             {notepad &&
                 <Container 
-                    whileHover={{scale: 1.5}}
+                    whileHover={{scale: 1.3}}
                     whileTap={{scale: 0.8}}
                     onClick={onButtonClick}
                 >
@@ -64,7 +64,7 @@ const Icon = ({
 
             {gear &&
                 <Container 
-                    whileHover={{scale: 1.5}}
+                    whileHover={{scale: 1.3}}
                     whileTap={{scale: 0.8}}
                     onClick={onButtonClick}
                 >
@@ -79,7 +79,7 @@ const Icon = ({
 
             {mail &&
                 <Container 
-                    whileHover={{scale: 1.5}}
+                    whileHover={{scale: 1.3}}
                     whileTap={{scale: 0.8}}
                     onClick={onButtonClick}
                 >

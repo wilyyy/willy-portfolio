@@ -226,7 +226,7 @@ const MongoIcon = styled(Mongodb)`
     height: 70px;
 `;
 
-const ToolsModal = ({onCloseClick=()=>{}}) => {
+const ToolsModal = ({onCloseClick}) => {
     const { theme } = useTheme();
 
     return (

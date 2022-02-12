@@ -11,6 +11,7 @@ import TopInfo from '../comps/TopInfo';
 import ProjectsModal from '../comps/ProjectsModal';
 import ContactModal from '../comps/ContactModal';
 import ToolsModal from '../comps/ToolsModal';
+import AboutModal from '../comps/AboutModal';
 
 const Page = styled(motion.div)`
   width: 100vw;
@@ -22,11 +23,6 @@ const Page = styled(motion.div)`
   align-items: center;
   cursor: crosshair;
 `;
-
-// const Text = styled.p`
-//   font-size: ${props=>props.fontsize};
-//   text-shadow: 0px 0px 10px rgba(51, 69, 185, 0.75);
-// `;
 
 const Column = styled.div`
   display: flex;
@@ -89,16 +85,24 @@ const Home = () => {
               },
           }}
         >
-          {/* <button 
-            onClick={()=>{setTheme(theme === 'dark' ? 'light' : 'dark')}}
-            style={{position: "absolute", right: '2%', top:'2%', width: '100px', height: '50px'}}
-          >test</button> */}
           <TopCont>
-
             <TopInfo />
           </TopCont>
+
           {modal === "projects" &&
-            <div>asdsad</div>
+            <Temp>
+              <ProjectsModal
+                onCloseClick={() => setModal("none")}
+              />
+            </Temp>
+          }
+
+          {modal === "about" &&
+            <Temp>
+              <AboutModal
+                onCloseClick={() => setModal("none")}
+              />
+            </Temp>
           }
 
           {modal === "tools" &&
