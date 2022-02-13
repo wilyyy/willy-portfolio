@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { CloseOutline } from "styled-icons/evaicons-outline";
 import { global_theme } from "../utils/themeconfig";
