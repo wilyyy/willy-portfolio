@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { useTheme } from '../utils/WillyThemeProvider';
 import { global_theme } from '../utils/themeconfig';
+import { modalBg } from '../utils/ModalSettings';
 import bgimage from "../public/darkbg.png";
 import Preloader from '../comps/Preloader';
 import Icon from '../comps/Icon';
@@ -12,6 +13,7 @@ import ProjectsModal from '../comps/ProjectsModal';
 import ContactModal from '../comps/ContactModal';
 import ToolsModal from '../comps/ToolsModal';
 import AboutModal from '../comps/AboutModal';
+import TypewritterText from '../comps/TypewritterText';
 
 const Page = styled(motion.div)`
   width: 100vw;
@@ -27,6 +29,7 @@ const Page = styled(motion.div)`
 const Column = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: ${props=>props.width};
   height: ${props=>props.height};
@@ -41,9 +44,31 @@ const Row = styled.div`
   z-index: 1;
 `;
 
+const Text = styled.p`
+  text-align: center;
+  ${({ H1 }) => H1 && `
+      font-size: 31px;
+  `}
+
+  ${({ Para }) => Para && `
+      font-size: ${props=>props.textsize};
+      color: ${props=>props.color};
+  `}
+`;
+
 const Temp = styled.div`
   position: absolute;
   z-index: 200;
+`;
+
+const ModalBg = styled.div`
+  position: absolute;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(9px) saturate(164%);
+  -webkit-backdrop-filter: blur(9px) saturate(164%);
 `;
 
 const TopCont = styled.div`
@@ -68,6 +93,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{type: "tween", duration: 1}}
           >
             <Preloader />
           </motion.div>
@@ -81,53 +107,66 @@ const Home = () => {
                   opacity: 0
               },
               pageAnimate: {
-                  opacity: 1
+                  opacity: 1,
+                  transition:{type: "tween", duration: 1}
               },
           }}
         >
           <TopCont>
             <TopInfo />
           </TopCont>
-
           {modal === "projects" &&
-            <Temp>
-              <ProjectsModal
-                onCloseClick={() => setModal("none")}
-              />
-            </Temp>
+            <>
+              <Temp>
+                <ProjectsModal
+                  onCloseClick={() => setModal("none")}
+                />
+              </Temp>
+              <ModalBg variants={modalBg} initial="hidden" animate="visible" exit="exit"/>
+            </>
           }
-
           {modal === "about" &&
-            <Temp>
-              <AboutModal
-                onCloseClick={() => setModal("none")}
-              />
-            </Temp>
+            <>
+              <Temp>
+                <AboutModal
+                  onCloseClick={() => setModal("none")}
+                />
+              </Temp>
+              <ModalBg variants={modalBg} initial="hidden" animate="visible" exit="exit"/>
+            </>
           }
-
           {modal === "tools" &&
+          <>
             <Temp>
               <ToolsModal
                 onCloseClick={() => setModal("none")}
               />
             </Temp>
+            <ModalBg variants={modalBg} initial="hidden" animate="visible" exit="exit"/>
+          </>
           }
-
           {modal === "contact" &&
-            <Temp>
-              <ContactModal 
-                onSubmitClick={() => setModal("none")}
-                onCloseClick={() => setModal("none")}
-              />
-            </Temp>
+            <>
+              <Temp>
+                <ContactModal
+                  onCloseClick={() => setModal("none")}
+                  onSubmitClick={() => setModal("none")}
+                />
+              </Temp>
+              <ModalBg variants={modalBg} initial="hidden" animate="visible" exit="exit"/>
+            </>
           }
-          <Row width="auto" height="auto">
-            <Icon folder onButtonClick={() => setModal("projects")}/>
-            <Icon notepad onButtonClick={() => setModal("about")}/>
-            <Icon gear onButtonClick={() => setModal("tools")}/>
-            <Icon mail onButtonClick={() => setModal("contact")}/>
-          </Row>
-          
+          <Column width="40%" height="250px">
+            <Text Para textsize="20px" color={global_theme[theme].text}>
+              <TypewritterText text='The practice of William Laurel Alvarez, a web / mobile developer based in Vancouver, Canada' delay={40}/>
+            </Text>
+            <Row width="auto" height="auto">
+              <Icon folder onButtonClick={() => setModal("projects")}/>
+              <Icon notepad onButtonClick={() => setModal("about")}/>
+              <Icon gear onButtonClick={() => setModal("tools")}/>
+              <Icon mail onButtonClick={() => setModal("contact")}/>
+            </Row>
+          </Column>
         </Page>
       )}
     </>

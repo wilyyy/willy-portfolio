@@ -71,11 +71,11 @@ const TopInfo = () => {
     const {theme, setTheme} = useTheme();
     return (
         <Container>
-            <Column width="422px" height="119px">
+            {/* <Column width="422px" height="119px">
                 <Text H1>William Laurel Alvarez</Text>
                 <Text Para textsize="20px">Web / Mobile Developer</Text>
-            </Column>
-            <Row width="330px" height="109px">
+            </Column> */}
+            {/* <Row width="330px" height="109px"> */}
                 <Column width="247px" height="109px">
                     <Row width="243px" height="24px">
                         <CalendarIcon color={global_theme[theme].text} />
@@ -104,7 +104,7 @@ const TopInfo = () => {
                     onClick={()=>{setTheme(theme === 'dark' ? 'light' : 'dark')}}
                     style={{width: '100px', height: '50px'}}
                 >test</button> */}
-            </Row>
+            {/* </Row> */}
         </Container>
     )
 }

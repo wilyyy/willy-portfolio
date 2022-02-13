@@ -67,7 +67,7 @@ const H2 = styled.p`
     left: 4%;
 `;
 
-const ToolCont = styled.div`
+const ToolCont = styled(motion.div)`
     display: flex;
     align-items: center;
     flex-wrap: nowrap;

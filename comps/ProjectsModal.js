@@ -60,7 +60,6 @@ const Close = styled(CloseOutline)`
     color: ${props=>props.color};
 `;
 
-
 const ProjectsModal = ({onCloseClick}) => {
     const { theme } = useTheme();
 

@@ -18,3 +18,21 @@ export const dropIn = {
         opacity: 0
     }
 }
+
+export const modalBg = {
+    hidden: {
+        opacity: 0
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            duration: 0.7,
+            type: "spring",
+            damping: 25,
+            stiffness: 500
+        }
+    },
+    exit: {
+        opacity: 0
+    }
+}
