@@ -10,18 +10,26 @@ export const Projects = [
         preview: 'video'
     },
     {
-        name: 'Eggsperiments',
-        type: 'desktop',
-        tech: 'Next.js / React.js',
+        name: 'Scout',
+        type: 'Desktop',
+        tech: 'NextJS, ExpressJS, MongoDB, NodeJS, D3JS',
         info: 'An all-in-one native mobile application for Translinks Compass Card system. Group term project for BCIT 2021 fall semester.',
-        github: 'https://github.com/wilyyy/CompassPlus',
+        github: 'https://github.com/wilyyy/Scout',
         preview: 'video'
     },
     {
         name: 'Vigilant',
         type: 'desktop',
         tech: 'Next.js / React.js',
-        info: 'An all-in-one native mobile application for Translinks Compass Card system. Group term project for BCIT 2021 fall semester.',
+        info: 'Two week javascript refresher for last semester web development class at BCIT',
+        github: 'https://github.com/wilyyy/CompassPlus',
+        preview: 'video'
+    },
+    {
+        name: 'Eggsperiments',
+        type: 'desktop',
+        tech: 'Next.js / React.js',
+        info: 'Solo winter break experimental project',
         github: 'https://github.com/wilyyy/CompassPlus',
         preview: 'video'
     },

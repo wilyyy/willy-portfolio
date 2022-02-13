@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { useTheme } from '../utils/WillyThemeProvider';
+import { useWindowDimensions } from '../utils/useWindowDimensions';
 import { global_theme } from '../utils/themeconfig';
 import { modalBg } from '../utils/ModalSettings';
 import bgimage from "../public/darkbg.png";
@@ -56,7 +57,7 @@ const Text = styled.p`
   `}
 `;
 
-const Temp = styled.div`
+const ModalCont = styled(motion.div)`
   position: absolute;
   z-index: 200;
 `;
@@ -117,42 +118,42 @@ const Home = () => {
           </TopCont>
           {modal === "projects" &&
             <>
-              <Temp>
+              <ModalCont>
                 <ProjectsModal
                   onCloseClick={() => setModal("none")}
                 />
-              </Temp>
+              </ModalCont>
               <ModalBg variants={modalBg} initial="hidden" animate="visible" exit="exit"/>
             </>
           }
           {modal === "about" &&
             <>
-              <Temp>
+              <ModalCont>
                 <AboutModal
                   onCloseClick={() => setModal("none")}
                 />
-              </Temp>
+              </ModalCont>
               <ModalBg variants={modalBg} initial="hidden" animate="visible" exit="exit"/>
             </>
           }
           {modal === "tools" &&
           <>
-            <Temp>
+            <ModalCont>
               <ToolsModal
                 onCloseClick={() => setModal("none")}
               />
-            </Temp>
+            </ModalCont>
             <ModalBg variants={modalBg} initial="hidden" animate="visible" exit="exit"/>
           </>
           }
           {modal === "contact" &&
             <>
-              <Temp>
+              <ModalCont>
                 <ContactModal
                   onCloseClick={() => setModal("none")}
                   onSubmitClick={() => setModal("none")}
                 />
-              </Temp>
+              </ModalCont>
               <ModalBg variants={modalBg} initial="hidden" animate="visible" exit="exit"/>
             </>
           }
