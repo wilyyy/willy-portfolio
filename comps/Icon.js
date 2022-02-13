@@ -19,13 +19,7 @@ const Container = styled(motion.div)`
     height: 118px;
 `;
 
-const Icon = ({
-    folder,
-    notepad,
-    gear,
-    mail,
-    onButtonClick=()=>{}
-}) => {
+const Icon = ({folder, notepad, gear, mail, onButtonClick}) => {
     const {theme} = useTheme();
 
     //change stroke back to 6
@@ -37,6 +31,7 @@ const Icon = ({
                     whileHover={{scale: 1.3}}
                     whileTap={{scale: 0.8}}
                     onClick={onButtonClick}
+                    transition={{type: "spring", stiffness: 500}}
                 >
                     <Image
                         src={theme === 'dark' ? folderIconGlass : folderIconOutline}
@@ -52,6 +47,7 @@ const Icon = ({
                     whileHover={{scale: 1.3}}
                     whileTap={{scale: 0.8}}
                     onClick={onButtonClick}
+                    transition={{type: "spring", stiffness: 500}}
                 >
                 <Image
                     src={theme === 'dark' ? notepadIconGlass : notepadIconOutline}
@@ -67,6 +63,7 @@ const Icon = ({
                     whileHover={{scale: 1.3}}
                     whileTap={{scale: 0.8}}
                     onClick={onButtonClick}
+                    transition={{type: "spring", stiffness: 500}}
                 >
                 <Image
                     src={theme === 'dark' ? notepadIconGlass : notepadIconOutline}
@@ -82,6 +79,7 @@ const Icon = ({
                     whileHover={{scale: 1.3}}
                     whileTap={{scale: 0.8}}
                     onClick={onButtonClick}
+                    transition={{type: "spring", stiffness: 500}}
                 >
                 <Image
                     src={theme === 'dark' ? notepadIconGlass : notepadIconOutline}

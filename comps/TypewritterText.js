@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Typewriter from 'typewriter-effect';
 
 const Container = styled.div`
-  color: #fff;
   font-size: ${props=>props.textsize};
 `;
 
