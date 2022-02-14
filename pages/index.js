@@ -47,6 +47,7 @@ const Row = styled.div`
 
 const Text = styled.p`
   text-align: center;
+  text-shadow: 0px 0px 10px rgba(51, 69, 185, 0.75);
   ${({ H1 }) => H1 && `
       font-size: 31px;
   `}
