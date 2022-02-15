@@ -5,6 +5,7 @@ import { CloseOutline } from "styled-icons/evaicons-outline";
 import { dropIn } from "../utils/ModalSettings";
 import { global_theme } from "../utils/themeconfig";
 import { useTheme } from "../utils/WillyThemeProvider"
+import ProjectInfoContainer from "./ProjectInfoContainer";
 
 const Stroke = styled(motion.div)`
     width: 70vw;
@@ -73,6 +74,7 @@ const ProjectsModal = ({onCloseClick}) => {
             <Container>
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
                 <Text H1>Projects</Text>
+                <ProjectInfoContainer />
             </Container>
         </Stroke>
     )
