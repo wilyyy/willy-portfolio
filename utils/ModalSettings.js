@@ -1,10 +1,12 @@
 export const dropIn = {
     hidden: {
-        y: "-50vh",
+        // y: "-50vh",
+        scale: 0,
         opacity: 0
     },
     visible: {
-        y: "0",
+        // y: "0",
+        scale: 1,
         opacity: 1,
         transition: {
             duration: 0.7,
@@ -14,7 +16,8 @@ export const dropIn = {
         }
     },
     exit: {
-        y: "100vh",
+        // 
+        scale: 0,
         opacity: 0
     }
 }

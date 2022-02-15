@@ -104,8 +104,6 @@ const TextArea = styled.textarea`
     }
 `;
 
-
-
 const Close = styled(CloseOutline)`
     width: 40px;
     height: 40px;
