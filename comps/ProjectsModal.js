@@ -21,7 +21,7 @@ const Stroke = styled(motion.div)`
 const Container = styled.div`
     backdrop-filter: blur(9px) saturate(164%);
     -webkit-backdrop-filter: blur(9px) saturate(164%);
-    background: linear-gradient(152.97deg, #151A1F 0%, #1C2024 0.01%, rgba(11, 12, 13, 0.65) 100%);
+    background: linear-gradient(152.97deg, #151A1F 0%, rgba(11, 12, 13, 0.65) 100%);
     border-top: 1px solid linear-gradient(90deg, #4F5466 0%, rgba(196, 196, 196, 0) 100%);
     border-left-color: linear-gradient(90deg, #4F5466 0%, rgba(196, 196, 196, 0) 100%);
     font-family: "cartograph_extralight";
@@ -59,6 +59,18 @@ const Close = styled(CloseOutline)`
     top: 2.5%;
     right: 2%;
     color: ${props=>props.color};
+`;
+
+const LightCont = styled(motion.div)`
+    width: 70vw;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: red;
+    border-radius: 16px;
+    font-family: "cartograph_extralight";
+    border: 1px solid #000;
 `;
 
 const ProjectsModal = ({onCloseClick}) => {
