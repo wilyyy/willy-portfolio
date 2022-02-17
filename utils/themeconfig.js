@@ -1,16 +1,23 @@
 export const global_theme = {
     dark: {
         base: '#0D0F11',
-        // base: '#0A0B0D',
         text: '#fff', //temporary
+        textShadow: "rgba(51, 69, 185, 0.75)", 
         modalFillValue1: "#151A1F",
-        modalStroke: ""
+        modalFillValue2: "rgba(11, 12, 13, 0.65)",
+        modalStrokeOuter: "#2F323D",
+        modalStrokeInner: "rgba(196, 196, 196, 0)",
+        modalBorder: "none"
     },
     light: {
-        base: '#FAF4D3',
+        base: '#fff',
         text: '#000', //temporary
-        modalFill: "linear-gradient(152.97deg, rgba(136, 136, 136, 0.06) 0%, rgba(255, 255, 255, 0) 100%)",
-        modalStroke: "#000"
+        textShadow: "none",
+        modalFillValue1: "rgba(136, 136, 136, 0.06)",
+        modalFillValue2: "rgba(255, 255, 255, 0)",
+        modalStrokeOuter: "rgba(255, 255, 255, 0)",
+        modalStrokeInner: "rgba(255, 255, 255, 0)",
+        modalBorder: "#000"
     }
 };
 
