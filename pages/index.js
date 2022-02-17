@@ -26,6 +26,7 @@ const Page = styled(motion.div)`
   justify-content: space-evenly;
   align-items: center;
   cursor: crosshair;
+  text-shadow: 0px 0px 10px ${props=>props.textShadow};
 `;
 
 const Column = styled.div`
@@ -48,7 +49,7 @@ const Row = styled.div`
 
 const Text = styled.p`
   text-align: center;
-  text-shadow: 0px 0px 10px rgba(51, 69, 185, 0.75);
+  
   ${({ H1 }) => H1 && `
       font-size: 31px;
   `}
@@ -69,8 +70,8 @@ const ModalBg = styled.div`
   z-index: 100;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(9px) saturate(164%);
+  background: rgba(0, 0, 0, 0.0);
+  backdrop-filter: blur(5px) saturate(164%);
   -webkit-backdrop-filter: blur(9px) saturate(164%);
 `;
 
@@ -114,6 +115,7 @@ const Home = () => {
                   transition:{type: "tween", duration: 1}
               },
           }}
+          textShadow={global_theme[theme].textShadow}
         >
           <TopCont>
             <TopInfo />

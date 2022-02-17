@@ -1,7 +1,7 @@
 export const dropIn = {
     hidden: {
         // y: "-50vh",
-        scale: 0,
+        scale: 0.4,
         opacity: 0
     },
     visible: {

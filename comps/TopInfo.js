@@ -13,7 +13,7 @@ import lightswitch_outline from '../public/lightswitch_outline.svg';
 const Container = styled.div`
     width: 95vw;
     height: 10vw; //temp
-    text-shadow: 0px 0px 10px rgba(51, 69, 185, 0.75);
+    text-shadow: 0px 0px 10px ${props=>props.textShadow};
     font-family: "cartograph_extralight";
     display: flex;
     justify-content: space-between;
@@ -70,41 +70,31 @@ const ClockIcon = styled(Clock)`
 const TopInfo = () => {
     const {theme, setTheme} = useTheme();
     return (
-        <Container>
-            {/* <Column width="422px" height="119px">
-                <Text H1>William Laurel Alvarez</Text>
-                <Text Para textsize="20px">Web / Mobile Developer</Text>
-            </Column> */}
-            {/* <Row width="330px" height="109px"> */}
-                <Column width="247px" height="109px">
-                    <Row width="243px" height="24px">
-                        <CalendarIcon color={global_theme[theme].text} />
-                        <Spacer />
-                        <Text Para textsize="16px">February 10, 2022</Text>
-                    </Row>
-                    <Row width="193px" height="29px">
-                        <LocationIcon color={global_theme[theme].text} />
-                        <Spacer />
-                        <Text Para textsize="16px">Vancouver, BC</Text>
-                    </Row>
-                    <Row width="131px" height="24px">
-                        <ClockIcon color={global_theme[theme].text} />
-                        <Spacer />
-                        <Text Para textsize="16px">12:00 AM</Text>
-                    </Row>
-                </Column>
-                <Image
-                    src={theme === 'dark' ? lightswitch_dark : lightswitch_outline}
-                    alt="Light Switch"
-                    width={59}
-                    height={108}
-                    onClick={()=>{setTheme(theme === 'dark' ? 'light' : 'dark')}}
-                />
-                {/* <button 
-                    onClick={()=>{setTheme(theme === 'dark' ? 'light' : 'dark')}}
-                    style={{width: '100px', height: '50px'}}
-                >test</button> */}
-            {/* </Row> */}
+        <Container textShadow={global_theme[theme].textShadow}>
+            <Column width="247px" height="109px">
+                <Row width="243px" height="24px">
+                    <CalendarIcon color={global_theme[theme].text} />
+                    <Spacer />
+                    <Text Para textsize="16px">February 10, 2022</Text>
+                </Row>
+                <Row width="193px" height="29px">
+                    <LocationIcon color={global_theme[theme].text} />
+                    <Spacer />
+                    <Text Para textsize="16px">Vancouver, BC</Text>
+                </Row>
+                <Row width="131px" height="24px">
+                    <ClockIcon color={global_theme[theme].text} />
+                    <Spacer />
+                    <Text Para textsize="16px">12:00 AM</Text>
+                </Row>
+            </Column>
+            <Image
+                src={theme === 'dark' ? lightswitch_dark : lightswitch_outline}
+                alt="Light Switch"
+                width={59}
+                height={108}
+                onClick={()=>{setTheme(theme === 'dark' ? 'light' : 'dark')}}
+            />
         </Container>
     )
 }

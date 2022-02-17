@@ -13,7 +13,7 @@ const Stroke = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(109.11deg, #2F323D 0%, rgba(196, 196, 196, 0) 51.68%, #2F323D 100.23%);
+    background: linear-gradient(109.11deg, ${props=>props.modalStrokeOuter} 0%, ${props=>props.modalStrokeInner} 51.68%, ${props=>props.modalStrokeOuter2} 100.23%);
     border-radius: 16px;
     font-family: "cartograph_extralight";
 `;
@@ -21,7 +21,7 @@ const Stroke = styled(motion.div)`
 const Container = styled.div`
     backdrop-filter: blur(9px) saturate(164%);
     -webkit-backdrop-filter: blur(9px) saturate(164%);
-    background: linear-gradient(152.97deg, #151A1F 0%, rgba(11, 12, 13, 0.65) 100%);
+    background: linear-gradient(152.97deg, ${props=>props.modalFill1} 0%, ${props=>props.modalFill2} 100%);
     border-top: 1px solid linear-gradient(90deg, #4F5466 0%, rgba(196, 196, 196, 0) 100%);
     border-left-color: linear-gradient(90deg, #4F5466 0%, rgba(196, 196, 196, 0) 100%);
     font-family: "cartograph_extralight";
@@ -33,8 +33,9 @@ const Container = styled.div`
     align-items: center;
     border-radius: 16px;
     box-shadow: 0px 0px 20px rgba(46, 50, 75, 0.25);
-    text-shadow: 0px 0px 10px rgba(51, 69, 185, 0.75);
+    text-shadow: 0px 0px 10px ${props=>props.textShadow};
     padding-bottom: 5%;
+    border: 1px solid ${props=>props.border};
 `;
 
 const Text = styled.p`
@@ -61,18 +62,6 @@ const Close = styled(CloseOutline)`
     color: ${props=>props.color};
 `;
 
-const LightCont = styled(motion.div)`
-    width: 70vw;
-    height: 650px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background: red;
-    border-radius: 16px;
-    font-family: "cartograph_extralight";
-    border: 1px solid #000;
-`;
-
 const ProjectsModal = ({onCloseClick}) => {
     const { theme } = useTheme();
 
@@ -82,8 +71,16 @@ const ProjectsModal = ({onCloseClick}) => {
             initial="hidden"
             animate="visible"
             exit="exit"
+            modalStrokeOuter={global_theme[theme].modalStrokeOuter}
+            modalStrokeOuter2={global_theme[theme].modalStrokeOuter}
+            modalStrokeInner={global_theme[theme].modalStrokeInner}
         >
-            <Container>
+            <Container
+                modalFill1={global_theme[theme].modalFillValue1}
+                modalFill2={global_theme[theme].modalFillValue2}
+                border={global_theme[theme].modalBorder}
+                textShadow={global_theme[theme].textShadow}
+            >
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
                 <Text H1>Projects</Text>
                 <ProjectInfoContainer />
