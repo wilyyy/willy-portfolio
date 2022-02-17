@@ -7,7 +7,10 @@ import folderIconGlass from '../public/folderIconGlass.svg';
 import folderIconOutline from '../public/folderIconOutline.svg';
 import notepadIconGlass from '../public/notepadIconGlass.svg';
 import notepadIconOutline from '../public/notepadIconOutline.svg';
-import { global_theme } from "../utils/themeconfig";
+import gearIconGlass from '../public/gearIconGlass.svg';
+import gearIconOutline from '../public/gearIconOutline.svg';
+import mailIconGlass from '../public/mailIconGlass.svg';
+import mailIconOutline from '../public/mailIconOutline.svg';
 
 const Container = styled(motion.div)`
     display: flex;
@@ -21,8 +24,6 @@ const Container = styled(motion.div)`
 
 const Icon = ({folder, notepad, gear, mail, onButtonClick}) => {
     const {theme} = useTheme();
-
-    //change stroke back to 6
 
     return (
         <>
@@ -66,7 +67,7 @@ const Icon = ({folder, notepad, gear, mail, onButtonClick}) => {
                     transition={{type: "spring", stiffness: 500}}
                 >
                 <Image
-                    src={theme === 'dark' ? notepadIconGlass : notepadIconOutline}
+                    src={theme === 'dark' ? gearIconGlass : gearIconOutline}
                     width='150'
                     height='173'
                 />
@@ -82,7 +83,7 @@ const Icon = ({folder, notepad, gear, mail, onButtonClick}) => {
                     transition={{type: "spring", stiffness: 500}}
                 >
                 <Image
-                    src={theme === 'dark' ? notepadIconGlass : notepadIconOutline}
+                    src={theme === 'dark' ? mailIconGlass : mailIconOutline}
                     width='150'
                     height='173'
                 />
