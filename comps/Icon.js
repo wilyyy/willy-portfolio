@@ -55,7 +55,7 @@ const Icon = ({folder, notepad, gear, mail, onButtonClick}) => {
                     width='150'
                     height='173'
                 />
-                <p>About</p>
+                <p>Info</p>
                 </Container>
             }
 
