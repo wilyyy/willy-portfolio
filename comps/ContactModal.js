@@ -135,7 +135,7 @@ const ContactModal = ({onSubmitClick, onCloseClick}) => {
                 textShadow={global_theme[theme].textShadow}
             >
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
-                <H1>Hit me up!</H1>
+                <H1>Hey there, let's talk!</H1>
                 <InputCont height="100px">
                     <p>Name</p>
                     <Input color={global_theme[theme].text}/>

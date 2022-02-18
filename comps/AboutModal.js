@@ -1,10 +1,13 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 import { CloseOutline } from "styled-icons/evaicons-outline";
 import { dropIn } from "../utils/ModalSettings";
 import { global_theme } from "../utils/themeconfig";
-import { useTheme } from "../utils/WillyThemeProvider"
+import { useTheme } from "../utils/WillyThemeProvider";
+import AboutInfoBox from "../comps/AboutInfoBox";
+import AboutNav from "../comps/AboutNav";
 
 const Stroke = styled(motion.div)`
     width: 70vw;
@@ -38,7 +41,7 @@ const Container = styled.div`
 `;
 
 const Row = styled.div`
-    width: 80%;
+    width: 88%;
     height: 450px;
     display: flex;
     justify-content: space-between;
@@ -80,6 +83,7 @@ const Close = styled(CloseOutline)`
 
 const AboutModal = ({onCloseClick}) => {
     const { theme } = useTheme();
+    const [info, setInfo] = useState("intro");
 
     return (
         <Stroke
@@ -100,14 +104,13 @@ const AboutModal = ({onCloseClick}) => {
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
                 <Text H1>About Me</Text>
                 <Row>
-                    <TextCont>
-                        <Text Para textsize={16}>
-                            Hi there! I’m William and I'm a Vancouver based web / mobile developer that specializes in React based frameworks. My programming background consists mostly of front end 
-                            development but I've played around with back end implementations and hope to build a strong foundation on both sides. I'm currently exploring Express JS as part of learning 
-                            the MERN stack and plan to utilize this knowledge on some personal projects soon.
-                        </Text>
-                    </TextCont>
-                    <div style={{background: "#000", width: "425px", height: "450px"}}>PICTURE</div>
+                    <AboutNav 
+                        onIntroClick={()=>setInfo("intro")}
+                        onExpClick={()=>setInfo("experience")}
+                        onAspClick={()=>setInfo("aspirations")}
+                        onMeClick={()=>setInfo("me")}
+                    />
+                    <AboutInfoBox infoState={info}/>
                 </Row>
             </Container>
         </Stroke>
