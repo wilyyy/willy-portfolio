@@ -26,7 +26,7 @@ const Page = styled(motion.div)`
   justify-content: space-evenly;
   align-items: center;
   cursor: crosshair;
-  text-shadow: 0px 0px 10px ${props=>props.textShadow};
+  text-shadow: 0px 0px 8px ${props=>props.textShadow};
 `;
 
 const Column = styled.div`
