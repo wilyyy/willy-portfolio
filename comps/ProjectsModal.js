@@ -1,11 +1,16 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+// https://mui.com/components/accordion/
+//https://mui.com/system/styled/
 
 import { CloseOutline } from "styled-icons/evaicons-outline";
 import { dropIn } from "../utils/ModalSettings";
 import { global_theme } from "../utils/themeconfig";
 import { useTheme } from "../utils/WillyThemeProvider"
-import ProjectInfoContainer from "./ProjectInfoContainer";
+import ProjectsInfoBox from "./ProjectsInfoBox";
 
 const Stroke = styled(motion.div)`
     width: 70vw;
@@ -82,8 +87,8 @@ const ProjectsModal = ({onCloseClick}) => {
                 textShadow={global_theme[theme].textShadow}
             >
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
-                <Text H1>Projects</Text>
-                <ProjectInfoContainer />
+                <Text H1>My Work</Text>
+                <ProjectsInfoBox />
             </Container>
         </Stroke>
     )

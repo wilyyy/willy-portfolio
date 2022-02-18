@@ -166,7 +166,7 @@ const Home = () => {
               <TypewritterText text='The practice of William Laurel Alvarez, a web / mobile developer based in Vancouver, Canada' delay={40}/>
             </Text>
             <Row width="auto" height="auto">
-              <Icon folder onButtonClick={() => setModal("projects")}/>
+              <Icon folder folderText="Work" onButtonClick={() => setModal("projects")}/>
               <Icon notepad onButtonClick={() => setModal("about")}/>
               <Icon gear onButtonClick={() => setModal("tools")}/>
               <Icon mail onButtonClick={() => setModal("contact")}/>

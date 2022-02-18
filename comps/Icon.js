@@ -22,7 +22,7 @@ const Container = styled(motion.div)`
     height: 118px;
 `;
 
-const Icon = ({folder, notepad, gear, mail, onButtonClick}) => {
+const Icon = ({folder, folderText, notepad, gear, mail, onButtonClick}) => {
     const {theme} = useTheme();
 
     return (
@@ -39,7 +39,7 @@ const Icon = ({folder, notepad, gear, mail, onButtonClick}) => {
                         width='146'
                         height='118'
                     />
-                    <p>Work</p>
+                    <p>{folderText}</p>
                 </Container>
             }
 
