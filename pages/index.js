@@ -127,7 +127,13 @@ const Home = () => {
                   onCloseClick={() => setModal("none")}
                 />
               </ModalCont>
-              <ModalBg variants={modalBg} initial="hidden" animate="visible" exit="exit"/>
+              <ModalBg 
+                variants={modalBg} 
+                initial="hidden" 
+                animate="visible" 
+                exit="exit"
+                onClick={() => setModal("none")}
+              />
             </>
           }
           {modal === "about" &&
@@ -137,7 +143,13 @@ const Home = () => {
                   onCloseClick={() => setModal("none")}
                 />
               </ModalCont>
-              <ModalBg variants={modalBg} initial="hidden" animate="visible" exit="exit"/>
+              <ModalBg 
+                variants={modalBg} 
+                initial="hidden" 
+                animate="visible" 
+                exit="exit"
+                onClick={() => setModal("none")}
+              />
             </>
           }
           {modal === "tools" &&
@@ -147,7 +159,13 @@ const Home = () => {
                 onCloseClick={() => setModal("none")}
               />
             </ModalCont>
-            <ModalBg variants={modalBg} initial="hidden" animate="visible" exit="exit"/>
+            <ModalBg 
+              variants={modalBg} 
+              initial="hidden" 
+              animate="visible" 
+              exit="exit"
+              onClick={() => setModal("none")}
+            />
           </>
           }
           {modal === "contact" &&
@@ -158,7 +176,13 @@ const Home = () => {
                   onSubmitClick={() => setModal("none")}
                 />
               </ModalCont>
-              <ModalBg variants={modalBg} initial="hidden" animate="visible" exit="exit"/>
+              <ModalBg 
+                variants={modalBg} 
+                initial="hidden" 
+                animate="visible" 
+                exit="exit"
+                onClick={() => setModal("none")}
+              />
             </>
           }
           <Column width="40%" height="250px">

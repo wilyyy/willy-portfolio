@@ -37,6 +37,13 @@ const Container = styled.div`
     border: 1px solid ${props=>props.border};
 `;
 
+const Row = styled.div`
+    width: 70%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+`;
+
 const H1 = styled.p`
     font-size: 31px;
     align-self: flex-start;
@@ -45,8 +52,7 @@ const H1 = styled.p`
 `;
 
 const InputCont = styled.form`
-    min-width: 70%;
-    max-width: 70%;
+    width: ${props=>props.width};
     height: ${props=>props.height};
     display: flex;
     flex-direction: column;
@@ -136,15 +142,21 @@ const ContactModal = ({onSubmitClick, onCloseClick}) => {
             >
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
                 <H1>Hey there, let's talk!</H1>
-                <InputCont height="100px">
-                    <p>Name</p>
-                    <Input color={global_theme[theme].text}/>
-                </InputCont>
-                <InputCont height="100px">
-                    <p>Email</p>
-                    <Input color={global_theme[theme].text}/>
+                <Row>
+                    <InputCont width="45%" height="100px">
+                        <p>Name</p>
+                        <Input color={global_theme[theme].text}/>
+                    </InputCont>
+                    <InputCont width="45%" height="100px">
+                        <p>Subject</p>
+                        <Input color={global_theme[theme].text}/>
+                    </InputCont>
+                </Row>
+                <InputCont width="70%" height="100px">
+                    <p>Email Address</p>
+                    <Input color={global_theme[theme].text} type="email" />
                 </InputCont >
-                <InputCont height="200px">
+                <InputCont width="70%" height="200px">
                     <p>Message</p>
                     <TextArea color={global_theme[theme].text}/>
                 </InputCont>
