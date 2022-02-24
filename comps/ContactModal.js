@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef } from "react";
+import emailjs, { init } from '@emailjs/browser';
+init("user_xDZUA2dRiLfXxCojRewvB");
 
 import { CloseOutline } from "styled-icons/evaicons-outline";
 import { global_theme } from "../utils/themeconfig";
@@ -17,7 +20,7 @@ const Stroke = styled(motion.div)`
     border-radius: 16px;
 `;
 
-const Container = styled.div`
+const Container = styled.form`
     backdrop-filter: blur(9px) saturate(164%);
     -webkit-backdrop-filter: blur(9px) saturate(164%);
     background: linear-gradient(152.97deg, ${props=>props.modalFill1} 0%, ${props=>props.modalFill2} 100%);
@@ -122,6 +125,23 @@ const Close = styled(CloseOutline)`
 `;
 
 const ContactModal = ({onSubmitClick, onCloseClick}) => {
+    const [sentEmail, setSentEmail] = useState(false);
+    const form = useRef();
+
+    const SendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_awzl0lt', 'template_nwb72xd', form.current, 'user_xDZUA2dRiLfXxCojRewvB')
+          .then((result) => {
+              console.log(result.text);
+              setSentEmail(true);
+              alert("email send");
+          }, (error) => {
+              console.log(error.text);
+              alert("error");
+          });
+    };
+
     const { theme } = useTheme();
 
     return (
@@ -139,27 +159,29 @@ const ContactModal = ({onSubmitClick, onCloseClick}) => {
                 modalFill2={global_theme[theme].modalFillValue2}
                 border={global_theme[theme].modalBorder}
                 textShadow={global_theme[theme].textShadow}
+                onsubmit={SendEmail}
             >
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
                 <H1>Hey there, let's talk!</H1>
                 <Row>
                     <InputCont width="45%" height="100px">
                         <p>Name</p>
-                        <Input color={global_theme[theme].text}/>
+                        <Input color={global_theme[theme].text} name="name"/>
                     </InputCont>
                     <InputCont width="45%" height="100px">
                         <p>Subject</p>
-                        <Input color={global_theme[theme].text}/>
+                        <Input color={global_theme[theme].text} name="subject"/>
                     </InputCont>
                 </Row>
                 <InputCont width="70%" height="100px">
                     <p>Email Address</p>
-                    <Input color={global_theme[theme].text} type="email" />
+                    <Input color={global_theme[theme].text} type="email" name="email_address"/>
                 </InputCont >
                 <InputCont width="70%" height="200px">
                     <p>Message</p>
-                    <TextArea color={global_theme[theme].text}/>
+                    <TextArea color={global_theme[theme].text} name="message"/>
                 </InputCont>
+                <input type='submit' value='Send' />
                 <Button onClick={onSubmitClick} text="Submit" />
             </Container>
         </Stroke>
