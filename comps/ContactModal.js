@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef } from "react";
 import emailjs, { init } from '@emailjs/browser';
-init("user_xDZUA2dRiLfXxCojRewvB");
 
 import { CloseOutline } from "styled-icons/evaicons-outline";
 import { global_theme } from "../utils/themeconfig";
 import { useTheme } from "../utils/WillyThemeProvider";
 import { dropIn } from "../utils/ModalSettings";
 import Button from "./Button";
+
+init("user_xDZUA2dRiLfXxCojRewvB");
 
 const Stroke = styled(motion.div)`
     width: 70vw;
@@ -128,7 +129,7 @@ const ContactModal = ({onSubmitClick, onCloseClick}) => {
     const [sentEmail, setSentEmail] = useState(false);
     const form = useRef();
 
-    const SendEmail = (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
     
         emailjs.sendForm('service_awzl0lt', 'template_nwb72xd', form.current, 'user_xDZUA2dRiLfXxCojRewvB')
@@ -136,6 +137,7 @@ const ContactModal = ({onSubmitClick, onCloseClick}) => {
               console.log(result.text);
               setSentEmail(true);
               alert("email send");
+              e.target.reset();
           }, (error) => {
               console.log(error.text);
               alert("error");
@@ -159,7 +161,8 @@ const ContactModal = ({onSubmitClick, onCloseClick}) => {
                 modalFill2={global_theme[theme].modalFillValue2}
                 border={global_theme[theme].modalBorder}
                 textShadow={global_theme[theme].textShadow}
-                onsubmit={SendEmail}
+                onSubmit={sendEmail}
+                ref={form}
             >
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
                 <H1>Hey there, let's talk!</H1>
