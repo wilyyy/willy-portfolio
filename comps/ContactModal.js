@@ -75,6 +75,16 @@ const Input = styled.input`
     padding: 2%;
     font-family: "cartograph_extralight";
 
+    -webkit-autofill,
+    -webkit-autofill:hover, 
+    -webkit-autofill:focus,
+    -webkit-autofill:active {
+        backdrop-filter: blur(9px) saturate(164%);
+        -webkit-backdrop-filter: blur(9px) saturate(164%);
+        background: linear-gradient(152.97deg, rgba(28, 76, 121, 0.06) 0%, rgba(255, 255, 255, 0) 100%);
+        box-shadow: inset 4px 0px 4px rgba(0, 0, 0, 0.6), inset 0px 6px 4px rgba(0, 0, 0, 0.6);
+    }
+
     :focus{
         filter: drop-shadow(0px 0px 4px rgba(125, 151, 219, 0.6));
         outline: none;
