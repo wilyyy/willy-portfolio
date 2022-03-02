@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useTheme } from '../utils/WillyThemeProvider';
 import { useWindowDimensions } from '../utils/useWindowDimensions';
 import { global_theme } from '../utils/themeconfig';
-import { modalBg } from '../utils/ModalSettings';
+import { modalBg, slideInFromBottom } from '../utils/ModalSettings';
 import bgimage from "../public/darkbg.png";
 import Preloader from '../comps/Preloader';
 import Icon from '../comps/Icon';
@@ -27,6 +27,7 @@ const Page = styled(motion.div)`
   align-items: center;
   cursor: crosshair;
   text-shadow: 0px 0px 8px ${props=>props.textShadow};
+  overflow: hidden;
 `;
 
 const Column = styled.div`
@@ -38,7 +39,7 @@ const Column = styled.div`
   height: ${props=>props.height};
 `;
 
-const Row = styled.div`
+const Row = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -189,7 +190,13 @@ const Home = () => {
             <Text Para textsize="20px" color={global_theme[theme].text}>
               <TypewritterText text='The practice of William Laurel Alvarez, a web / mobile developer based in Vancouver, Canada' delay={40}/>
             </Text>
-            <Row width="auto" height="auto">
+            <Row 
+              width="auto" 
+              height="auto"
+              variants={slideInFromBottom}
+              initial="hidden"
+              animate="visible"
+            >
               <Icon folder folderText="Work" onButtonClick={() => setModal("projects")}/>
               <Icon notepad onButtonClick={() => setModal("about")}/>
               <Icon gear onButtonClick={() => setModal("tools")}/>

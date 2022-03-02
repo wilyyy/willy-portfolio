@@ -39,3 +39,33 @@ export const modalBg = {
         opacity: 0
     }
 }
+
+export const slideInFromBottom = {
+    hidden: {
+        y: "50vh",
+        opacity: 0
+    },
+    visible: {
+        y: "0",
+        opacity: 1,
+        transition: {
+            duration: 0.5,
+            type: "tween"
+        }
+    },
+}
+
+export const slideInFromTop = {
+    hidden: {
+        y: "-50vh",
+        opacity: 0
+    },
+    visible: {
+        y: "0",
+        opacity: 1,
+        transition: {
+            duration: 0.3,
+            type: "tween"
+        }
+    },
+}
