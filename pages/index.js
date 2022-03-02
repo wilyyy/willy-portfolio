@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useTheme } from '../utils/WillyThemeProvider';
 import { useWindowDimensions } from '../utils/useWindowDimensions';
 import { global_theme } from '../utils/themeconfig';
-import { modalBg, slideInFromBottom } from '../utils/ModalSettings';
+import { modalBg, slideInFromBottom, fadeIn } from '../utils/ModalSettings';
 import bgimage from "../public/darkbg.png";
 import Preloader from '../comps/Preloader';
 import Icon from '../comps/Icon';
@@ -48,7 +48,7 @@ const Row = styled(motion.div)`
   z-index: 1;
 `;
 
-const Text = styled.p`
+const Text = styled(motion.p)`
   text-align: center;
   
   ${({ H1 }) => H1 && `
@@ -193,9 +193,6 @@ const Home = () => {
             <Row 
               width="auto" 
               height="auto"
-              variants={slideInFromBottom}
-              initial="hidden"
-              animate="visible"
             >
               <Icon folder folderText="Work" onButtonClick={() => setModal("projects")}/>
               <Icon notepad onButtonClick={() => setModal("about")}/>

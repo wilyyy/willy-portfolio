@@ -1,3 +1,5 @@
+import TypewriterComponent from "typewriter-effect"
+
 export const dropIn = {
     hidden: {
         // y: "-50vh",
@@ -49,23 +51,41 @@ export const slideInFromBottom = {
         y: "0",
         opacity: 1,
         transition: {
-            duration: 0.5,
-            type: "tween"
+            delay: 1,
+            type: "spring",
+            damping: 25,
+            stiffness: 500
         }
     },
 }
 
 export const slideInFromTop = {
     hidden: {
-        y: "-50vh",
+        y: "50vh",
         opacity: 0
     },
     visible: {
         y: "0",
         opacity: 1,
         transition: {
-            duration: 0.3,
-            type: "tween"
+            delay: 1,
+            type: "spring",
+            damping: 25,
+            stiffness: 500
         }
     },
+}
+
+export const fadeIn = {
+    hidden: {
+        opacity: 0
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            delay: 1.2,
+            duration: 0.5,
+            type: "tween"
+        }
+    }
 }
