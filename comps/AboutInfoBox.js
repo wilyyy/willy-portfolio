@@ -14,8 +14,8 @@ const Container = styled.div`
     color: ${props=>props.color};
     backdrop-filter: blur(9px) saturate(164%);
     -webkit-backdrop-filter: blur(9px) saturate(164%);
-    background: linear-gradient(152.97deg, rgba(28, 76, 121, 0.06) 0%, rgba(255, 255, 255, 0) 100%);
-    box-shadow: inset 4px 0px 4px rgba(0, 0, 0, 0.6), inset 0px 6px 4px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(152.97deg, rgba(28, 76, 121, 0.06) 100%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: inset 4px 0px 4px rgba(0, 0, 0, 0.9), inset 0px 6px 4px rgba(0, 0, 0, 0.9);
     border-style: none;
     border-radius: 10px;
     font-family: "cartograph_extralight";

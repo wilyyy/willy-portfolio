@@ -88,13 +88,17 @@ const TopInfo = () => {
                     <Text Para textsize="16px">12:00 AM</Text>
                 </Row>
             </Column>
-            <Image
-                src={theme === 'dark' ? lightswitch_dark : lightswitch_outline}
-                alt="Light Switch"
-                width={59}
-                height={108}
-                onClick={()=>{setTheme(theme === 'dark' ? 'light' : 'dark')}}
-            />
+            <Row width="" ></Row>
+            <Column width="39px" height="109px">
+                <Image
+                    src={theme === 'dark' ? lightswitch_dark : lightswitch_outline}
+                    alt="Light Switch"
+                    width={39}
+                    height={88}
+                    onClick={()=>{setTheme(theme === 'dark' ? 'light' : 'dark')}}
+                />
+                <p>{theme === 'dark' ? 'Dark Mode' : 'Light Mode'}</p>
+            </Column>
         </Container>
     )
 }

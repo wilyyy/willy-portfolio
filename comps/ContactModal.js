@@ -1,15 +1,12 @@
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef } from "react";
-import emailjs, { init } from '@emailjs/browser';
 
 import { CloseOutline } from "styled-icons/evaicons-outline";
 import { global_theme } from "../utils/themeconfig";
 import { useTheme } from "../utils/WillyThemeProvider";
 import { dropIn } from "../utils/ModalSettings";
 import Button from "./Button";
-
-init("user_xDZUA2dRiLfXxCojRewvB");
 
 const Stroke = styled(motion.div)`
     width: 70vw;
@@ -135,24 +132,44 @@ const Close = styled(CloseOutline)`
     color: ${props=>props.color};
 `;
 
+const SubmitButton = styled(motion.input)`
+    width: 200px;
+    height: 70px;
+    color: ${props=>props.color};
+    background: linear-gradient(152.97deg, rgba(11, 15, 19, 0.83) 0%, rgba(30, 52, 72, 0.65) 100%);
+    backdrop-filter: blur(9px) saturate(164%);
+    -webkit-backdrop-filter: blur(9px) saturate(164%);
+    border-style: none;
+    border: 1px solid rgba(47, 50, 61, 0.5);
+    border-radius: 16px;
+    font-family: "cartograph_extralight";
+    font-size: 24px;
+
+    :hover{
+        filter: drop-shadow(0px 0px 4px rgba(125, 151, 219, 0.6));
+        outline: none;
+        transition: 0.5s;
+    }
+`;
+
 const ContactModal = ({onSubmitClick, onCloseClick}) => {
     const [sentEmail, setSentEmail] = useState(false);
     const form = useRef();
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+    // const sendEmail = (e) => {
+    //     e.preventDefault();
     
-        emailjs.sendForm('service_awzl0lt', 'template_nwb72xd', form.current, 'user_xDZUA2dRiLfXxCojRewvB')
-          .then((result) => {
-              console.log(result.text);
-              setSentEmail(true);
-              alert("email send");
-              e.target.reset();
-          }, (error) => {
-              console.log(error.text);
-              alert("error");
-          });
-    };
+    //     emailjs.sendForm('service_awzl0lt', 'template_nwb72xd', form.current, 'user_xDZUA2dRiLfXxCojRewvB')
+    //       .then((result) => {
+    //           console.log(result.text);
+    //           setSentEmail(true);
+    //           alert("email send");
+    //           e.target.reset();
+    //       }, (error) => {
+    //           console.log(error.text);
+    //           alert("error");
+    //       });
+    // };
 
     const { theme } = useTheme();
 
@@ -171,7 +188,6 @@ const ContactModal = ({onSubmitClick, onCloseClick}) => {
                 modalFill2={global_theme[theme].modalFillValue2}
                 border={global_theme[theme].modalBorder}
                 textShadow={global_theme[theme].textShadow}
-                onSubmit={sendEmail}
                 ref={form}
             >
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
@@ -194,8 +210,15 @@ const ContactModal = ({onSubmitClick, onCloseClick}) => {
                     <p>Message</p>
                     <TextArea color={global_theme[theme].text} name="message"/>
                 </InputCont>
-                <input type='submit' value='Send' />
-                <Button onClick={onSubmitClick} text="Submit" />
+                <SubmitButton 
+                    type='submit' 
+                    value='Send Email' 
+                    color={global_theme[theme].text}
+                    whileHover={{scale: 1.05}}
+                    whileTap={{scale: 0.9}}
+                    transition={{type: "spring", stiffness: 500}}
+                />
+                {/* <Button onClick={onSubmitClick} text="Submit" /> */}
             </Container>
         </Stroke>
     )
