@@ -87,7 +87,7 @@ const Home = () => {
   const [modal, setModal] = useState("none"); //3 modes based on string
 
   useEffect(()=>{
-    setTimeout(() => setLoading(true), 3000);
+    setTimeout(() => setLoading(true), 4500); //switch to 3000 in final
   }, [])
 
   return (
