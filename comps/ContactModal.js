@@ -57,6 +57,7 @@ const InputCont = styled.form`
     height: ${props=>props.height};
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 `;
 
 const Input = styled.input`
@@ -154,22 +155,16 @@ const SubmitButton = styled(motion.input)`
 
 const ContactModal = ({onSubmitClick, onCloseClick}) => {
     const [sentEmail, setSentEmail] = useState(false);
-    const form = useRef();
 
-    // const sendEmail = (e) => {
-    //     e.preventDefault();
-    
-    //     emailjs.sendForm('service_awzl0lt', 'template_nwb72xd', form.current, 'user_xDZUA2dRiLfXxCojRewvB')
-    //       .then((result) => {
-    //           console.log(result.text);
-    //           setSentEmail(true);
-    //           alert("email send");
-    //           e.target.reset();
-    //       }, (error) => {
-    //           console.log(error.text);
-    //           alert("error");
-    //       });
-    // };
+    const HandleOnSubmit = async (e) => {
+        e.preventDefault();
+        const formData = {};
+        Array.from(e.currentTarget.elements).forEach(field => {
+            if( !field.name ) return;
+            formData[field.name] = field.value;
+        });
+        console.log(formData);
+    }
 
     const { theme } = useTheme();
 
@@ -188,26 +183,27 @@ const ContactModal = ({onSubmitClick, onCloseClick}) => {
                 modalFill2={global_theme[theme].modalFillValue2}
                 border={global_theme[theme].modalBorder}
                 textShadow={global_theme[theme].textShadow}
-                ref={form}
+                method="post"
+                onSubmit={HandleOnSubmit}
             >
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
                 <H1>Hey there, let's talk!</H1>
                 <Row>
                     <InputCont width="45%" height="100px">
-                        <p>Name</p>
-                        <Input color={global_theme[theme].text} name="name"/>
+                        <label htmlFor="name">Name</label>
+                        <Input color={global_theme[theme].text} type="text" name="name"/>
                     </InputCont>
                     <InputCont width="45%" height="100px">
-                        <p>Subject</p>
+                        <label htmlFor="subject">Subject</label>
                         <Input color={global_theme[theme].text} name="subject"/>
                     </InputCont>
                 </Row>
                 <InputCont width="70%" height="100px">
-                    <p>Email Address</p>
-                    <Input color={global_theme[theme].text} type="email" name="email_address"/>
+                    <label htmlFor="email">Email Address</label>
+                    <Input color={global_theme[theme].text} type="email" name="email"/>
                 </InputCont >
                 <InputCont width="70%" height="200px">
-                    <p>Message</p>
+                    <label htmlFor="message">Subject</label>
                     <TextArea color={global_theme[theme].text} name="message"/>
                 </InputCont>
                 <SubmitButton 
