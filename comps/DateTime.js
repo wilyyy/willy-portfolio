@@ -10,13 +10,13 @@ const DateTime = ({date, time}) => {
                     <p>{displayTodaysDate}</p>
                 </div>
             }
+            
             {time && 
                 <div>
                     <p>{displayTime}</p>
                 </div>
             }
         </>
-        
     )
 }
 

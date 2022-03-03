@@ -76,7 +76,7 @@ const TopInfo = () => {
                 <Row width="243px" height="24px">
                     <CalendarIcon color={global_theme[theme].text} />
                     <Spacer />
-                    <DateTime date/>
+                    <DateTime date />
                 </Row>
                 <Row width="193px" height="29px">
                     <LocationIcon color={global_theme[theme].text} />
@@ -86,7 +86,7 @@ const TopInfo = () => {
                 <Row width="131px" height="24px">
                     <ClockIcon color={global_theme[theme].text} />
                     <Spacer />
-                    <DateTime time/>
+                    <DateTime time />
                 </Row>
             </Column>
             <Row width="" ></Row>
