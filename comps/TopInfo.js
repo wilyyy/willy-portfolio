@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 // muh name, github, linkedin, current day & time api & dark mode switch
 
-import DateTime from './Datetime';
+import DateTime from './DateTime';
 import { useTheme } from '../utils/WillyThemeProvider';
 import { global_theme } from '../utils/themeconfig';
 import { Calendar } from '@styled-icons/bootstrap/Calendar';
