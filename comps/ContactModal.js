@@ -163,6 +163,10 @@ const ContactModal = ({onSubmitClick, onCloseClick}) => {
             if( !field.name ) return;
             formData[field.name] = field.value;
         });
+        fetch('./pages/api/mail', {
+            method: 'post',
+            body: JSON.stringify(formData)
+        })
         console.log(formData);
     }
 
