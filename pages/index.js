@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 //..
 import { useTheme } from '../utils/WillyThemeProvider';
-import { useWindowDimensions } from '../utils/useWindowDimensions';
+import { useWindowDimensions } from '../utils/hooks/useWindowDimensions';
 import { global_theme } from '../utils/themeconfig';
 import { modalBg, slideInFromBottom, fadeIn } from '../utils/ModalSettings';
 import bgimage from "../public/darkbg.png";
