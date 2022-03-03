@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 // muh name, github, linkedin, current day & time api & dark mode switch
 
 import DateTime from './DateTime';
@@ -8,6 +9,9 @@ import { global_theme } from '../utils/themeconfig';
 import { Calendar } from '@styled-icons/bootstrap/Calendar';
 import { Location } from '@styled-icons/ionicons-sharp/Location';
 import { Clock } from '@styled-icons/bootstrap/Clock';
+import { Github } from '@styled-icons/bootstrap/Github';
+import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare';
+import {StyledIconBase} from '@styled-icons/styled-icon';
 import lightswitch_dark from '../public/lightswitch_light.svg';
 import lightswitch_outline from '../public/lightswitch_outline.svg';
 
@@ -19,6 +23,10 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    ${StyledIconBase} {
+        color: ${props=>props.color};
+    }
 `;
 
 const Column = styled.div`
@@ -27,6 +35,10 @@ const Column = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    ${({ SwitchCont }) => SwitchCont && `
+        align-items: center;
+    `}
 `;
 
 const Row = styled.div`
@@ -34,6 +46,18 @@ const Row = styled.div`
     align-items: center;
     width: ${props=>props.width};
     height: ${props=>props.height};
+
+    ${({right}) => right && `
+        justify-content: space-between;
+        align-items: flex-start;
+    `}
+
+    ${({innerright}) => innerright && `
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        top: 18%;
+    `}
 `;
 
 const Spacer = styled.div`
@@ -89,17 +113,43 @@ const TopInfo = () => {
                     <DateTime time />
                 </Row>
             </Column>
-            <Row width="" ></Row>
-            <Column width="39px" height="109px">
-                <Image
-                    src={theme === 'dark' ? lightswitch_dark : lightswitch_outline}
-                    alt="Light Switch"
-                    width={39}
-                    height={88}
-                    onClick={()=>{setTheme(theme === 'dark' ? 'light' : 'dark')}}
-                />
-                <p>{theme === 'dark' ? 'Dark Mode' : 'Light Mode'}</p>
-            </Column>
+            <Row width="170px" height="109px" right>
+                <Row width="100px" height="109px" innerright>
+                    <motion.a
+                        whileHover={{scale: 1.3}}
+                        transition={{type: "spring", stiffness: 500}}
+                        href="https://github.com/wilyyy"
+                        target="_blank"
+                    >
+                        <Github size={40}/>
+                    </motion.a>
+                    <motion.a
+                        whileHover={{scale: 1.3}}
+                        transition={{type: "spring", stiffness: 500}}
+                        href="https://www.linkedin.com/in/william-alvarez-76b806149/"
+                        target="_blank"
+                    >
+                        <LinkedinSquare size={45}/>
+                    </motion.a>
+                </Row>
+                
+                <Column width="39px" height="109px" SwitchCont>
+                    <motion.div
+                        whileHover={{scale: 1.3}}
+                        transition={{type: "spring", stiffness: 500}}
+                    >
+                        <Image
+                            src={theme === 'dark' ? lightswitch_dark : lightswitch_outline}
+                            alt="Light Switch"
+                            width={49}
+                            height={98}
+                            onClick={()=>{setTheme(theme === 'dark' ? 'light' : 'dark')}}
+                        />
+                    </motion.div>
+                    <p>{theme === 'dark' ? 'Dark' : 'Light'}</p>
+                </Column>
+            </Row>
+            
         </Container>
     )
 }
