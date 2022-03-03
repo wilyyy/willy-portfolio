@@ -83,7 +83,7 @@ const TopInfo = () => {
                     <Spacer />
                     <Text Para textsize="16px">Vancouver, BC</Text>
                 </Row>
-                <Row width="131px" height="24px">
+                <Row width="140px" height="24px">
                     <ClockIcon color={global_theme[theme].text} />
                     <Spacer />
                     <DateTime time />
