@@ -10,14 +10,16 @@ const DateTime = ({date, time}) => {
         }, 1000);
     }, [])
 
-    let showDate = new Date();
-    let displayTodaysDate = showDate.getDate() + '/' + (showDate.getMonth() +1) + '/' + showDate.getFullYear();
-    let displayTime = showDate.getHours() + ':' + showDate.getMinutes();
+    const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
+    const showDate = new Date().toLocaleDateString(undefined, options);
+    // let showDate = new Date();
+    // let displayTodaysDate = showDate.getDate() + '/' + (showDate.getMonth() +1) + '/' + showDate.getFullYear();
+    // let displayTime = showDate.getHours() + ':' + showDate.getMinutes();
     return (
         <>
             {date &&
                 <div>
-                    <p>{displayTodaysDate}</p>
+                    <p>{showDate}</p>
                 </div>
             }
             
