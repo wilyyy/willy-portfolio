@@ -25,7 +25,6 @@ const Page = styled(motion.div)`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  cursor: crosshair;
   text-shadow: 0px 0px 8px ${props=>props.textShadow};
   overflow: hidden;
 `;

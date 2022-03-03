@@ -154,7 +154,7 @@ const TopInfo = () => {
                                 exit={{ opacity: 0 }}
                                 whileHover={{scale: 1.3}}
                                 transition={{type: "spring", stiffness: 500}}
-                                href="https://github.com/wilyyy"
+                                href="https://www.linkedin.com/in/william-alvarez-76b806149/"
                                 target="_blank"
                             >
                                 <LinkedinSquare size={45}/>
@@ -168,7 +168,7 @@ const TopInfo = () => {
                                 exit={{ opacity: 0 }}
                                 whileHover={{scale: 1.3}}
                                 transition={{type: "spring", stiffness: 500}}
-                                href="https://github.com/wilyyy"
+                                href="https://www.linkedin.com/in/william-alvarez-76b806149/"
                                 target="_blank"
                             >
                                 <LinkedinBox size={45}/>
