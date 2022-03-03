@@ -34,7 +34,9 @@ const Container = styled.div`
     justify-content: space-evenly;
     align-items: center;
     border-radius: 16px;
-    box-shadow: 0px 0px 20px rgba(46, 50, 75, 0.25);
+    box-shadow: 0px 0px 20px rgba(46, 50, 75, 0.25),
+    inset 43.3333px -43.3333px 43.3333px rgba(0, 0, 0, 0.1), 
+              inset -43.3333px 43.3333px 43.3333px rgba(0, 0, 0, 0.1);
     text-shadow: 0px 0px 10px ${props=>props.textShadow};
     padding-bottom: 5%;
     border: 1px solid ${props=>props.border};
