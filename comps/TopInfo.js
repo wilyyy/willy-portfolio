@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 // muh name, github, linkedin, current day & time api & dark mode switch
 
+import DateTime from './Datetime';
 import { useTheme } from '../utils/WillyThemeProvider';
 import { global_theme } from '../utils/themeconfig';
 import { Calendar } from '@styled-icons/bootstrap/Calendar';
@@ -75,7 +76,7 @@ const TopInfo = () => {
                 <Row width="243px" height="24px">
                     <CalendarIcon color={global_theme[theme].text} />
                     <Spacer />
-                    <Text Para textsize="16px">February 10, 2022</Text>
+                    <DateTime date/>
                 </Row>
                 <Row width="193px" height="29px">
                     <LocationIcon color={global_theme[theme].text} />
@@ -85,7 +86,7 @@ const TopInfo = () => {
                 <Row width="131px" height="24px">
                     <ClockIcon color={global_theme[theme].text} />
                     <Spacer />
-                    <Text Para textsize="16px">12:00 AM</Text>
+                    <DateTime time/>
                 </Row>
             </Column>
             <Row width="" ></Row>
