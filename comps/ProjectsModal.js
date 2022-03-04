@@ -11,6 +11,7 @@ import { dropIn } from "../utils/ModalSettings";
 import { global_theme } from "../utils/themeconfig";
 import { useTheme } from "../utils/WillyThemeProvider"
 import ProjectsInfoBox from "./ProjectsInfoBox";
+import ProjectsInfo from "./ProjectsInfo";
 
 const Stroke = styled(motion.div)`
     width: 70vw;

@@ -85,7 +85,7 @@ const AboutInfoBox = ({infoState}) => {
             }
             {infoState === "me" && 
                 <>
-                    <div style={{background: "#000", width: "425px", height: "450px"}}>cute pic of me C:</div>
+                    <div style={{background: "#000", width: "425px", height: "450px"}}>pictures of me coming soon</div>
                 </> 
             }
         </Container>
