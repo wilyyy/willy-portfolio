@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -12,6 +13,7 @@ import { global_theme } from "../utils/themeconfig";
 import { useTheme } from "../utils/WillyThemeProvider"
 import ProjectsInfoBox from "./ProjectsInfoBox";
 import ProjectsInfo from "./ProjectsInfo";
+import ProjectData from "../data/ProjectData";
 
 const Stroke = styled(motion.div)`
     width: 70vw;
@@ -89,7 +91,10 @@ const ProjectsModal = ({onCloseClick}) => {
             >
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
                 <Text H1>My Work</Text>
-                <ProjectsInfoBox />
+                {/* <ProjectsInfoBox /> */}
+                {ProjectData?.map((el, index) => 
+                    (<ProjectsInfo key={index} title={el.name}/>)
+                )}
             </Container>
         </Stroke>
     )
