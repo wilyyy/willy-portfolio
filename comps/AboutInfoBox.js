@@ -51,15 +51,15 @@ const AboutInfoBox = ({infoState}) => {
             {infoState === "intro" && 
                 <>
                     <p>
-                    Hi there! I am William and I’m a web and mobile developer, currently living in Vancouver BC. Having built a variety of cross platform applications using design thinking methodologies in agile environments, I am currently seeking a career in front end development and engineering.
+                    Hi there! I am William and I’m a web and mobile developer, currently living in Vancouver BC. Having built many cross platform applications using design thinking methodologies in agile environments, I am currently seeking a career in front end development and engineering.
                     </p>
-                    <p>In my free time, I enjoy reading a variety of literature, playing volleyball, esports and learning about psychology related topics.</p>
+                    <p>In my free time, I enjoy hiking, urban exploration, playing volleyball and reading a variety of literature. Some topics I am very eager about are are esports, design thinking and psychology.</p>
                 </> 
             }
             {infoState === "experience" && 
                 <>
                     <p>Although my primrary skills and aspirations lie in programming, I have experience with UI/UX design and consider myself a developer and designer hybrid. </p>
-                    <p>Starting from a young age, I have over a decade worth of experience with design and digital media ranging from creating graphics with Photoshop to 3D modeling with 3DS Max and because of the time I’ve spent on these creative hobbies I’ve built a solid foundation and great intuition for visual design. My two years of computer science helped me obtain a good understanding of programming fundamentals and two more years at BCIT’s Digital Design and Development program helped me discover my passion and aptitude for application development. </p>
+                    <p>Starting from a young age, I have over a decade worth of experience with design and digital media ranging from creating graphics with Photoshop to 3D modeling with 3DS Max. Due to the time I’ve spent on these creative hobbies I’ve built a solid foundation and great intuition for visual design. My two years of computer science helped me obtain a good understanding of programming fundamentals and two more years at BCIT’s Digital Design and Development program helped me discover my passion and aptitude for application development. </p>
                 </> 
             }
             {infoState === "aspirations" && 
