@@ -17,10 +17,30 @@ const Container = styled.div`
     background: linear-gradient(152.97deg, rgba(28, 76, 121, 0.06) 100%, rgba(255, 255, 255, 0) 100%);
     box-shadow: inset 4px 0px 4px rgba(0, 0, 0, 0.9), inset 0px 6px 4px rgba(0, 0, 0, 0.9);
     border-style: none;
-    border-radius: 10px;
+    border-radius: 5px;
     font-family: "cartograph_extralight";
     overflow-y: scroll;
     overflow-x: hidden;
+
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(15, 15, 15, 0.4);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(152.97deg, rgba(8, 29, 48, 0.06) 0%, rgba(255, 255, 255, 0) 100%);
+        border: 1px solid rgba(47, 50, 61, 0.5);
+        backdrop-filter: blur(9px) saturate(164%);
+        -webkit-backdrop-filter: blur(9px) saturate(164%);
+        border-radius: 16px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(152.97deg, rgba(131, 183, 232, 0.06) 0%, rgba(255, 255, 255, 0) 100%);
+    }
 `;
 
 const AboutInfoBox = ({infoState}) => {
