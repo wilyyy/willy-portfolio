@@ -18,6 +18,7 @@ const Column = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
 `;
 
 const Link = styled(motion.button)`
@@ -39,25 +40,24 @@ const Dorito = styled(motion.div)`
 
 const AboutNav = ({onIntroClick, onExpClick, onAspClick, onMeClick}) => {
     const { theme } = useTheme();
-    const [down, setDown] = useState("0");
 
-    const ClickExp = () => {
-        onExpClick();
-        setDown("20%");
-    }
+    // const ClickExp = () => {
+    //     onExpClick();
+    //     setDown("20%");
+    // }
 
     return (
         <Container
             textShadow={global_theme[theme].textShadow}
         >
             <Column>
-                <Dorito 
+                {/* <Dorito 
                     initial={{ top: 0 }}
                     animate={{ top: down }}
                     transition={{type: "tween", duration: 1}}
-                />
+                /> */}
                 <Link color={global_theme[theme].text} onClick={onIntroClick}>intro.txt</Link>
-                <Link color={global_theme[theme].text} onClick={ClickExp}>experience.txt</Link>
+                <Link color={global_theme[theme].text} onClick={onExpClick}>experience.txt</Link>
                 <Link color={global_theme[theme].text} onClick={onAspClick}>aspirations.txt</Link>
                 <Link color={global_theme[theme].text} onClick={onMeClick}>me.png</Link>
             </Column>
