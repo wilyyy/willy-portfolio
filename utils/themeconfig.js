@@ -1,3 +1,15 @@
+export const compassplus_colors = {
+    CAROLINABLUE: '#009DDC',
+    ALICEBLUE: '#EEF8FF',
+    DAVYSGREY: '#575759',
+    LIGHTGREY: '#C4C4C4',
+    SPACECADET: '#252B42',
+    LIMEGREEN: '#5BCF49',
+    MIDWAYBLUE: '#12648F',
+    MIDWAYGREEN: '#23611A',
+    CONCESSION: '#DE7F32'
+}
+
 export const global_theme = {
     dark: {
         base: '#0D0F11',

@@ -192,6 +192,7 @@ const ContactModal = ({onSubmitClick, onCloseClick}) => {
             >
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
                 <H1>Hey there, let's talk!</H1>
+                <p>Email form currently not working, please email me at williamlaurelalvarez@gmail.com instead</p>
                 <Row>
                     <InputCont width="45%" height="100px">
                         <label htmlFor="name">Name</label>
