@@ -47,7 +47,7 @@ const AboutInfoBox = ({infoState}) => {
                     <p>With aspirations of becoming a Full Stack Developer / Engineer in the future, here are some technologies I aim to explore in 2022: </p>
                     <ul>
                         <li>Further mastery of Express and MongoDB</li>
-                        <li>Tailwind & ChakraUI</li>
+                        <li>Tailwind</li>
                         <li>Typescript</li>
                         <li>Redux</li>
                         <li>D3.js</li>

@@ -120,7 +120,7 @@ const TopInfo = () => {
                     {theme === 'dark' ? (
                         <AnimatePresence>
                             <motion.a
-                                initial={{ opacity: 0 }}
+                                initial={{ opacity: 1 }}
                                 animate={{ opacity: 1, transition: {type: "tween", duration: 2} }}
                                 exit={{ opacity: 0 }}
                                 whileHover={{scale: 1.3}}
@@ -134,7 +134,7 @@ const TopInfo = () => {
                     ) : (
                         <AnimatePresence>
                             <motion.a
-                                initial={{ opacity: 1 }}
+                                initial={{ opacity: 0 }}
                                 animate={{ opacity: 1, transition: {type: "tween", duration: 2} }}
                                 exit={{ opacity: 0 }}
                                 whileHover={{scale: 1.3}}
@@ -149,7 +149,7 @@ const TopInfo = () => {
                     {theme === 'dark' ? (
                         <AnimatePresence>
                             <motion.a
-                                initial={{ opacity: 0 }}
+                                initial={{ opacity: 1 }}
                                 animate={{ opacity: 1, transition: {type: "tween", duration: 2} }}
                                 exit={{ opacity: 0 }}
                                 whileHover={{scale: 1.3}}
@@ -163,7 +163,7 @@ const TopInfo = () => {
                     ) : (
                         <AnimatePresence>
                             <motion.a
-                                initial={{ opacity: 1 }}
+                                initial={{ opacity: 0 }}
                                 animate={{ opacity: 1, transition: {type: "tween", duration: 2} }}
                                 exit={{ opacity: 0 }}
                                 whileHover={{scale: 1.3}}
