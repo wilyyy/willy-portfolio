@@ -53,7 +53,7 @@ const AboutInfoBox = ({infoState}) => {
                     <p>
                     Hi there! I am William and I’m a web and mobile developer, currently living in Vancouver BC. Having built many cross platform applications using design thinking methodologies in agile environments, I am currently seeking a career in front end development and engineering.
                     </p>
-                    <p>In my free time, I enjoy hiking, urban exploration, playing volleyball and reading a variety of literature. Some topics I am very eager about are are esports, design thinking and psychology.</p>
+                    <p>In my free time, I enjoy hiking, urban exploration, playing volleyball and reading a variety of literature. Some topics I am very eager about are are esports, design thinking, virtual/augmented reality, and psychology.</p>
                 </> 
             }
             {infoState === "experience" && 
@@ -64,7 +64,7 @@ const AboutInfoBox = ({infoState}) => {
             }
             {infoState === "aspirations" && 
                 <>
-                    <p>With aspirations of becoming a Full Stack Developer / Engineer in the future, here are some technologies I aim to explore in 2022: </p>
+                    <p>With aspirations of becoming a Full Stack Developer / Engineer in the future, here are some technologies I aim to explore in 2022 and onward: </p>
                     <ul>
                         <li>Further mastery of Express and MongoDB</li>
                         <li>Tailwind</li>
@@ -73,6 +73,7 @@ const AboutInfoBox = ({infoState}) => {
                         <li>D3.js</li>
                         <li>PostgreSQL</li>
                         <li>Prisma</li>
+                        <li>Unity & VR/AR technologies</li>
                         <li>Python into Flask or Django</li>
                         <li>GO</li>
                         <li>Docker</li>
