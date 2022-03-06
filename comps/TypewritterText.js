@@ -9,14 +9,15 @@ const TypewritterText = ({
     text="William Laurel Alvarez",
     textsize="16px",
     isLoop = false,
-    delay
+    delay,
+    autoStart = true
 }) => {
     return (
         <Container textsize={textsize}>
             <Typewriter
                 options={{
                     strings: text,
-                    autoStart: true,
+                    autoStart: autoStart,
                     loop: isLoop,
                     delay: delay
                 }}

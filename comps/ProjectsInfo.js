@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { global_theme, compassplus_colors } from "../utils/themeconfig";
 
 const Container = styled.div`
@@ -10,10 +11,15 @@ const Container = styled.div`
 `;
 
 const ProjectsInfo = ({
-    title="CompassPlus"
+    title,
+    bgcolor,
+    stack,
+    icon,
+    type,
+    onButtonClick
 }) => {
     return (
-        <Container bgcolor={compassplus_colors.CAROLINABLUE}>
+        <Container onClick={onButtonClick} bgcolor={bgcolor}>
             {title}
         </Container>
     )

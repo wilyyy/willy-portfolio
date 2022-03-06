@@ -12,8 +12,7 @@ import { dropIn } from "../utils/ModalSettings";
 import { global_theme } from "../utils/themeconfig";
 import { useTheme } from "../utils/WillyThemeProvider"
 import ProjectsInfoBox from "./ProjectsInfoBox";
-import ProjectsInfo from "./ProjectsInfo";
-import ProjectData from "../data/ProjectData";
+import ProjectsSwiper from "./ProjectsSwiper";
 
 const Stroke = styled(motion.div)`
     width: 70vw;
@@ -90,11 +89,9 @@ const ProjectsModal = ({onCloseClick}) => {
                 textShadow={global_theme[theme].textShadow}
             >
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
-                <Text H1>My Work</Text>
+                <Text H1>Section - Work in progress</Text>
                 {/* <ProjectsInfoBox /> */}
-                {ProjectData?.map((el, index) => 
-                    (<ProjectsInfo key={index} title={el.name}/>)
-                )}
+                <ProjectsSwiper />
             </Container>
         </Stroke>
     )
