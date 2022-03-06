@@ -187,7 +187,10 @@ const Home = () => {
           }
           <Column width="40%" height="250px">
             <Text Para textsize="20px" color={global_theme[theme].text}>
-              <TypewritterText text='The practice of William Laurel Alvarez, a web / mobile developer based in Vancouver, Canada' delay={40}/>
+              <TypewritterText 
+                text='The practice of William Laurel Alvarez, a web / mobile developer based in Vancouver, Canada' 
+                delay={0}
+              />
             </Text>
             <Row 
               width="auto" 
