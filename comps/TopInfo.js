@@ -97,7 +97,10 @@ const ClockIcon = styled(Clock)`
 const TopInfo = () => {
     const {theme, setTheme} = useTheme();
     return (
-        <Container textShadow={global_theme[theme].textShadow}>
+        <Container 
+            textShadow={global_theme[theme].textShadow}
+            color={global_theme[theme].text}
+        >
             <Column width="247px" height="109px">
                 <Row width="243px" height="24px">
                     <CalendarIcon color={global_theme[theme].text} />
