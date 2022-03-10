@@ -30,7 +30,7 @@ const Info = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 50%;
+    width: ${props=>props.width};
     height: 500px;
 `;
 
@@ -60,7 +60,7 @@ const ProjectsSwiper = () => {
                         width="230px"
                         height="466px"
                     />
-                    <Info>
+                    <Info width="50%">
                         <h1>Compass Plus</h1>
                         <h4>Role: Full Stack Developer</h4>
                         <p>An all in one native mobile application for Translink's Compass Card system</p>
@@ -72,15 +72,18 @@ const ProjectsSwiper = () => {
                 <ProjectCont>
                     <ProjectsInfo 
                         scout
-                        width="230px"
-                        height="466px"
+                        width="480px"
+                        height="277px"
                     />
-                    <Info>
+                    <Info width="35%">
                         <h1>Scout</h1>
                         <h4>Role: Project Manager & Full Stack Developer</h4>
-                        <p>An all in one native mobile application for Translink's Compass Card system</p>
-                        <p>React Native, PHP, MySQL, Firebase</p>
-                        <Button text="View Case Study" onClick={()=>router.push("../compassplus")}/>
+                        <p>Next generation anime database that aims to solve many common pain points of anime viewers</p>
+                        <p>React.js / Next.js, Express, Mongoose, MongoDB</p>
+                        <Button text="View Case Study" onClick={()=>router.push("../scout")}/>
+                        <a href="https://scout-delta.vercel.app/" target="_blank">
+                            <Button text="View Site" />
+                        </a>
                     </Info>
                 </ProjectCont>
 

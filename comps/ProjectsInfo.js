@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { global_theme, compassplus_colors } from "../utils/themeconfig";
 
 import CompassHome from '../public/CompassHome.png';
+import ScoutHome from '../public/ScoutHome.png';
 
 const Container = styled(motion.div)`
     border-radius: 11px;
@@ -31,7 +32,7 @@ const ProjectsInfo = ({
             }
 
             {scout && 
-                <Image src={CompassHome} width={width} height={height} />
+                <Image src={ScoutHome} width={width} height={height} />
             }
         </Container>
     )

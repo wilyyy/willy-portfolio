@@ -4,8 +4,8 @@ import { useTheme } from "../utils/WillyThemeProvider";
 import { global_theme } from "../utils/themeconfig";
 
 const Container = styled(motion.button)`
-    width: 200px;
-    height: 70px;
+    width: ${props=>props.width};
+    height: ${props=>props.height};
     color: ${props=>props.color};
     background: linear-gradient(152.97deg, rgba(11, 15, 19, 0.83) 0%, rgba(30, 52, 72, 0.65) 100%);
     backdrop-filter: blur(9px) saturate(164%);
@@ -14,7 +14,7 @@ const Container = styled(motion.button)`
     border: 1px solid rgba(47, 50, 61, 0.5);
     border-radius: 16px;
     font-family: "cartograph_extralight";
-    font-size: 18px;
+    font-size: ${props=>props.fontsize};
 
     :hover{
         filter: drop-shadow(0px 0px 4px rgba(125, 151, 219, 0.6));
@@ -23,12 +23,21 @@ const Container = styled(motion.button)`
     }
 `;
 
-const Button = ({onClick, text}) => {
+const Button = ({
+    onClick=()=>{}, 
+    text, 
+    fontsize="18px",
+    width="200px",
+    height="70px",
+}) => {
     const { theme } = useTheme();
 
     return (
         <Container
             color={global_theme[theme].text}
+            fontsize={fontsize}
+            width={width}
+            height={height}
             onClick={onClick}
             whileHover={{scale: 1.05}}
             whileTap={{scale: 0.9}}
