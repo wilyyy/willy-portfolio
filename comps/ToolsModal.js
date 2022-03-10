@@ -19,6 +19,10 @@ import { DigitalOcean } from "@styled-icons/fa-brands/DigitalOcean";
 import { Autodesk } from "@styled-icons/simple-icons/Autodesk";
 import { Adobeaftereffects } from "@styled-icons/simple-icons/Adobeaftereffects";
 import { Mongodb } from "@styled-icons/simple-icons/Mongodb";
+import { Styledcomponents } from "@styled-icons/simple-icons/Styledcomponents";
+import { Storybook } from "@styled-icons/simple-icons/Storybook";
+import { Nodejs } from "@styled-icons/boxicons-logos/Nodejs";
+import { Vercel } from "@styled-icons/simple-icons/Vercel";
 import { global_theme } from "../utils/themeconfig";
 import { useTheme } from "../utils/WillyThemeProvider";
 import { dropIn } from "../utils/ModalSettings";
@@ -110,9 +114,11 @@ const IconCont = styled.div`
     display: flex;
     flex: 0 0 auto;
     flex-direction: column;
+    text-align: center;
     align-items: center;
     width: 134px;
     height: 100px;
+    font-size: 14px;
 `;
 
 const Close = styled(CloseOutline)`
@@ -126,6 +132,30 @@ const Close = styled(CloseOutline)`
 `;
 
 const ReactIcon = styled(LogoReact)`
+    color: ${props=>props.color};
+    width: 70px;
+    height: 70px;
+`;
+
+const StyCompIcon = styled(Styledcomponents)`
+    color: ${props=>props.color};
+    width: 70px;
+    height: 70px;
+`;
+
+const StorybookIcon = styled(Storybook)`
+    color: ${props=>props.color};
+    width: 70px;
+    height: 70px;
+`;
+
+const VercelIcon = styled(Vercel)`
+    color: ${props=>props.color};
+    width: 70px;
+    height: 70px;
+`;
+
+const NodejsIcon = styled(Nodejs)`
     color: ${props=>props.color};
     width: 70px;
     height: 70px;
@@ -267,6 +297,14 @@ const ToolsModal = ({onCloseClick}) => {
                         <p>React Native</p>
                     </IconCont>
                     <IconCont>
+                        <StyCompIcon color={global_theme[theme].text}/>
+                        <p>Styled Components</p>
+                    </IconCont>
+                    <IconCont>
+                        <StorybookIcon color={global_theme[theme].text}/>
+                        <p>Storybook</p>
+                    </IconCont>
+                    <IconCont>
                         <HTMLIcon color={global_theme[theme].text}/>
                         <p>HTML5</p>
                     </IconCont>
@@ -287,6 +325,10 @@ const ToolsModal = ({onCloseClick}) => {
                         <p>MongoDB</p>
                     </IconCont>
                     <IconCont>
+                        <NodejsIcon color={global_theme[theme].text}/>
+                        <p>Node.js</p>
+                    </IconCont>
+                    <IconCont>
                         <PHPIcon color={global_theme[theme].text}/>
                         <p>PHP</p>
                     </IconCont>
@@ -301,6 +343,10 @@ const ToolsModal = ({onCloseClick}) => {
                     <IconCont>
                         <DgOcean color={global_theme[theme].text}/>
                         <p>Digital Ocean</p>
+                    </IconCont>
+                    <IconCont>
+                        <VercelIcon color={global_theme[theme].text}/>
+                        <p>Vercel</p>
                     </IconCont>
                 </ToolCont>
                 <H2>Design</H2>

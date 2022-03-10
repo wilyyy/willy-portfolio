@@ -34,6 +34,14 @@ const ProjectsInfo = ({
             {scout && 
                 <Image src={ScoutHome} width={width} height={height} />
             }
+
+            {steady && 
+                <Image src={ScoutHome} width={width} height={height} />
+            }
+
+            {vigilant && 
+                <Image src={ScoutHome} width={width} height={height} />
+            }
         </Container>
     )
 }
