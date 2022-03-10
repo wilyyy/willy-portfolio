@@ -1,6 +1,6 @@
 export const compassplus_colors = {
     CAROLINABLUE: '#009DDC',
-    ALICEBLUE: '#EEF8FF',
+    ALICEBLUE: '#FFF',
     DAVYSGREY: '#575759',
     LIGHTGREY: '#C4C4C4',
     SPACECADET: '#252B42',

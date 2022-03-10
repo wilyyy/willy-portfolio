@@ -14,7 +14,7 @@ const Container = styled(motion.button)`
     border: 1px solid rgba(47, 50, 61, 0.5);
     border-radius: 16px;
     font-family: "cartograph_extralight";
-    font-size: 24px;
+    font-size: 18px;
 
     :hover{
         filter: drop-shadow(0px 0px 4px rgba(125, 151, 219, 0.6));

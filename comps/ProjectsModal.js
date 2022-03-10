@@ -11,7 +11,6 @@ import { CloseOutline } from "styled-icons/evaicons-outline";
 import { dropIn } from "../utils/ModalSettings";
 import { global_theme } from "../utils/themeconfig";
 import { useTheme } from "../utils/WillyThemeProvider"
-import ProjectsInfoBox from "./ProjectsInfoBox";
 import ProjectsSwiper from "./ProjectsSwiper";
 
 const Stroke = styled(motion.div)`
@@ -48,6 +47,9 @@ const Container = styled.div`
 const Text = styled.p`
     ${({ H1 }) => H1 && `
         font-size: 31px;
+        align-self: flex-start;
+        position: relative;
+        left: 4%;
     `}
 
     ${({ H2 }) => H2 && `
@@ -89,7 +91,7 @@ const ProjectsModal = ({onCloseClick}) => {
                 textShadow={global_theme[theme].textShadow}
             >
                 <Close color={global_theme[theme].text} onClick={onCloseClick}/>
-                <Text H1>Section - Work in progress</Text>
+                <Text H1>Projects - Work in progress</Text>
                 {/* <ProjectsInfoBox /> */}
                 <ProjectsSwiper />
             </Container>

@@ -10,6 +10,7 @@ const Container = styled.div`
     width: 90%;
     height: 500px;
     display: flex;
+    align-items: center;
 
     .rec.rec-arrow {
         border-radius: 0;
@@ -28,8 +29,21 @@ const Info = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     width: 50%;
     height: 500px;
+`;
+
+const Row = styled.div`
+    width: ${props => props.width};
+    height: ${props => props.height};
+`;
+
+const Column = styled.div`
+    width: ${props => props.width};
+    height: ${props => props.height};
+    display: flex;
+    flex-direction: column;
 `;
 
 const ProjectsSwiper = () => {
@@ -42,26 +56,32 @@ const ProjectsSwiper = () => {
             >
                 <ProjectCont>
                     <ProjectsInfo 
-                        title="CompassPlus"
-                        bgcolor={compassplus_colors.CAROLINABLUE}
-                        width="214px"
-                        height="463px"
+                        compassPlus
+                        width="230px"
+                        height="466px"
                     />
                     <Info>
                         <h1>Compass Plus</h1>
+                        <h4>Role: Full Stack Developer</h4>
                         <p>An all in one native mobile application for Translink's Compass Card system</p>
                         <p>React Native, PHP, MySQL, Firebase</p>
-                        <Button text="View More" onClick={()=>router.push("../compassplus")}/>
+                        <Button text="View Case Study" onClick={()=>router.push("../compassplus")}/>
                     </Info>
                 </ProjectCont>
 
                 <ProjectCont>
                     <ProjectsInfo 
-                        title="Scout"
-                        bgcolor="Orange"
-                        width="500px"
-                        height="500px"
+                        scout
+                        width="230px"
+                        height="466px"
                     />
+                    <Info>
+                        <h1>Scout</h1>
+                        <h4>Role: Project Manager & Full Stack Developer</h4>
+                        <p>An all in one native mobile application for Translink's Compass Card system</p>
+                        <p>React Native, PHP, MySQL, Firebase</p>
+                        <Button text="View Case Study" onClick={()=>router.push("../compassplus")}/>
+                    </Info>
                 </ProjectCont>
 
                 <ProjectCont>
