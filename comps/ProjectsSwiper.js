@@ -131,7 +131,7 @@ const ProjectsSwiper = () => {
                             <Text H2><b>Stack:</b></Text>
                             <StackCont 
                                 border={theme === 'dark' ? '#2F323D' : '#000'}
-                                bgcolor={theme === 'dark' ? 'rgba(0, 0, 0, 0.5)' : '#D6D6D6'}
+                                bgcolor={theme === 'dark' ? 'rgba(0, 0, 0, 0.5)' : 'none'}
                             >
                                 <Column width="20px" height="auto" Center>
                                     <LogoReact size={30}/>
@@ -203,7 +203,7 @@ const ProjectsSwiper = () => {
                             <Text H2><b>Stack:</b></Text>
                             <StackCont 
                                 border={theme === 'dark' ? '#2F323D' : '#000'}
-                                bgcolor={theme === 'dark' ? 'rgba(0, 0, 0, 0.5)' : '#D6D6D6'}
+                                bgcolor={theme === 'dark' ? 'rgba(0, 0, 0, 0.5)' : 'none'}
                             >
                                 <Column width="20px" height="auto" Center>
                                     <LogoReact size={30}/>

@@ -58,7 +58,7 @@ const AboutInfoBox = ({infoState}) => {
             }
             {infoState === "experience" && 
                 <>
-                    <p>Although my primrary skills and aspirations lie in programming, I have experience with UI/UX design and consider myself a developer and designer hybrid. </p>
+                    <p>Although my primary skills and aspirations lie in programming, I have experience with UI/UX design and consider myself a developer and designer hybrid. </p>
                     <p>Starting from a young age, I have over a decade worth of experience with design and digital media ranging from creating graphics with Photoshop to 3D modeling with 3DS Max. Due to the time I’ve spent on these creative hobbies I’ve built a solid foundation and great intuition for visual design. My two years of computer science helped me obtain a good understanding of programming fundamentals and two more years at BCIT’s Digital Design and Development program helped me discover my passion and aptitude for application development. </p>
                 </> 
             }
