@@ -12,8 +12,11 @@ const Page = styled.div`
 `;
 
 const Intro = () => {
+    const router = useRouter();
+
     return (
         <Page>
+            <button onClick={()=>router.push("/")}>go back</button>
             <h1>CompassPlus</h1>
         </Page>
     )
